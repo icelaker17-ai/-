@@ -1,0 +1,4108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>保安员国家资格考试题库练习系统 (400题完整版)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f8f9fa;
+            padding: 15px 30px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .stat-box {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .content {
+            display: flex;
+            min-height: 600px;
+        }
+        
+        .question-panel {
+            flex: 3;
+            padding: 30px;
+            border-right: 1px solid #eaeaea;
+        }
+        
+        .control-panel {
+            flex: 1;
+            padding: 30px;
+            background-color: #f9fafc;
+        }
+        
+        .question-type {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .single-choice {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+        
+        .true-false {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+        
+        .multi-choice {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .question-number {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            font-size: 20px;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        
+        .options {
+            margin-bottom: 30px;
+        }
+        
+        .option {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .option:hover {
+            border-color: #90caf9;
+            background-color: #f5f9ff;
+        }
+        
+        .option.selected {
+            border-color: #2196f3;
+            background-color: #e3f2fd;
+        }
+        
+        .option.correct {
+            border-color: #4caf50;
+            background-color: #e8f5e9;
+        }
+        
+        .option.incorrect {
+            border-color: #f44336;
+            background-color: #ffebee;
+        }
+        
+        .option-label {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        
+        .option.selected .option-label {
+            background-color: #2196f3;
+            color: white;
+        }
+        
+        .option.correct .option-label {
+            background-color: #4caf50;
+            color: white;
+        }
+        
+        .option.incorrect .option-label {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .answer-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .answer-section.show {
+            display: block;
+        }
+        
+        .correct-answer {
+            font-size: 18px;
+            color: #2e7d32;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .answer-explanation {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .btn-prev {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .btn-prev:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .btn-next {
+            background-color: #2196f3;
+            color: white;
+        }
+        
+        .btn-next:hover {
+            background-color: #1976d2;
+        }
+        
+        .btn-check {
+            background-color: #4caf50;
+            color: white;
+        }
+        
+        .btn-check:hover {
+            background-color: #388e3c;
+        }
+        
+        .btn-show-answer {
+            background-color: #ff9800;
+            color: white;
+        }
+        
+        .btn-show-answer:hover {
+            background-color: #f57c00;
+        }
+        
+        .btn-reset {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .btn-reset:hover {
+            background-color: #d32f2f;
+        }
+        
+        .navigation {
+            margin-bottom: 30px;
+        }
+        
+        .nav-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .question-list {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #eaeaea;
+        }
+        
+        .question-item {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #f5f5f5;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        .question-item:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .question-item.current {
+            background-color: #2196f3;
+            color: white;
+        }
+        
+        .question-item.answered {
+            background-color: #4caf50;
+            color: white;
+        }
+        
+        .question-item.incorrect-answered {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px;
+            background-color: #f5f5f5;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .filter-btn.active {
+            background-color: #2196f3;
+            color: white;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background-color: #4caf50;
+            width: 0%;
+            transition: width 0.5s;
+        }
+        
+        .score-display {
+            font-size: 24px;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        @media (max-width: 992px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .question-panel {
+                border-right: none;
+                border-bottom: 1px solid #eaeaea;
+            }
+            
+            .question-list {
+                grid-template-columns: repeat(8, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .question-list {
+                grid-template-columns: repeat(6, 1fr);
+            }
+            
+            .question-text {
+                font-size: 18px;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            button {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .question-list {
+                grid-template-columns: repeat(5, 1fr);
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>保安员国家资格考试题库练习系统 (400题完整版)</h1>
+            <div class="subtitle">包含单选题、判断题、多选题共400道题目 - 基于保安员国家职业标准</div>
+        </header>
+        
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number" id="current-question">1</div>
+                <div class="stat-label">当前题目</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="total-questions">400</div>
+                <div class="stat-label">题目总数</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="answered-count">0</div>
+                <div class="stat-label">已回答</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="correct-count">0</div>
+                <div class="stat-label">正确数</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="score">0%</div>
+                <div class="stat-label">正确率</div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="question-panel">
+                <div class="question-type single-choice" id="question-type">单选题</div>
+                <div class="question-number" id="question-number">第1题 (共400题)</div>
+                <div class="question-text" id="question-text">
+                    保安押运公司为某银行护送款项，发现可疑人员长时间窥探运钞车上下款，下列做法错误的是（ ）。
+                </div>
+                
+                <div class="options" id="options-container">
+                    <!-- 选项将通过JavaScript动态生成 -->
+                </div>
+                
+                <div class="answer-section" id="answer-section">
+                    <div class="correct-answer">正确答案: <span id="correct-answer">C</span></div>
+                    <div class="answer-explanation" id="answer-explanation">
+                        当发现可疑人员长时间窥探运钞车时，应暂停上下款并立即报告，按正常勤务继续上下款是错误的做法，会增加风险。
+                    </div>
+                </div>
+                
+                <div class="buttons">
+                    <button class="btn-prev" id="prev-btn">上一题</button>
+                    <button class="btn-check" id="check-btn">检查答案</button>
+                    <button class="btn-show-answer" id="show-answer-btn">显示答案</button>
+                    <button class="btn-next" id="next-btn">下一题</button>
+                </div>
+            </div>
+            
+            <div class="control-panel">
+                <div class="score-display" id="score-display">得分: 0/0</div>
+                
+                <div class="navigation">
+                    <div class="nav-title">题目导航</div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-type="all">全部题目</button>
+                        <button class="filter-btn" data-type="single">单选题</button>
+                        <button class="filter-btn" data-type="truefalse">判断题</button>
+                        <button class="filter-btn" data-type="multi">多选题</button>
+                        <button class="filter-btn" data-type="unanswered">未答题</button>
+                        <button class="filter-btn" data-type="incorrect">答错题</button>
+                    </div>
+                    <div class="question-list" id="question-list">
+                        <!-- 题目导航将通过JavaScript动态生成 -->
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" id="progress-bar"></div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <button class="btn-reset" id="reset-btn" style="width: 100%;">重置答题记录</button>
+                </div>
+                
+                <div style="margin-top: 20px; padding: 15px; background-color: #e8f5e9; border-radius: 8px;">
+                    <h3 style="margin-bottom: 10px; color: #2e7d32;">使用说明</h3>
+                    <ul style="padding-left: 20px; font-size: 14px; color: #555;">
+                        <li>点击选项选择答案</li>
+                        <li>点击"检查答案"验证是否正确</li>
+                        <li>点击"显示答案"查看正确答案和解析</li>
+                        <li>点击题目编号可直接跳转到该题</li>
+                        <li>使用筛选按钮查看特定类型题目</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 题目数据 - 包含所有400道题目
+        const questions = [
+            // 单选题 第1题-第225题
+            {
+                id: 1,
+                type: "single",
+                question: "保安押运公司为某银行护送款项，发现可疑人员长时间窥探运钞车上下款，下列做法错误的是（ ）。",
+                options: ["A: 暂停上下款", "B: 立即通报银行", "C: 按正常勤务继续上下款", "D: 通知当地公安机关"],
+                correctAnswer: "C",
+                explanation: "当发现可疑人员长时间窥探运钞车时，应暂停上下款并立即报告，按正常勤务继续上下款是错误的做法，会增加风险。"
+            },
+            {
+                id: 2,
+                type: "single",
+                question: "押运工作中由于客观原因无法按时抵达目的地时，押运员做法错误的是（ ）。",
+                options: ["A: 通知公司领导并说明情况", "B: 通知公司业务部并说明情况", "C: 通知公安机关并说明情况", "D: 通知客户单位并说明情况"],
+                correctAnswer: "C",
+                explanation: "押运工作无法按时抵达时，应通知公司领导、业务部和客户单位，一般不需要通知公安机关，除非发生治安或刑事案件。"
+            },
+            {
+                id: 3,
+                type: "single",
+                question: "张三在就餐时与李四发生纠纷，张三趁李四不注意，挥拳将李四打成重伤，张三的这种行为从主观心理上分析属于（ ）。",
+                options: ["A: 犯罪故意", "B: 犯罪过失", "C: 疏忽大意", "D: 过于自信"],
+                correctAnswer: "A",
+                explanation: "张三明知自己的行为会造成他人受伤的后果，仍然实施该行为，属于直接故意犯罪。"
+            },
+            {
+                id: 4,
+                type: "single",
+                question: "一名14周岁的学生甲，到某工厂偷东西，被保安员乙发现，甲就拿着棍子打乙并妄图逃跑，乙恼怒之下，拿起保安棍朝甲猛砸，将甲左腿打断。乙的这种行为属于（ ）。",
+                options: ["A: 正当防卫行为", "B: 紧急避险行为", "C: 正当业务行为", "D: 犯罪行为"],
+                correctAnswer: "D",
+                explanation: "乙的行为明显超过了必要限度，造成他人重伤，属于故意伤害行为，构成犯罪。"
+            },
+            {
+                id: 5,
+                type: "single",
+                question: "依据《中华人民共和国枪支管理法》和《专职守护押运人员枪支使用管理条例》，保安员（ ）可以使用武器。",
+                options: ["A: 从事保安武装守护时", "B: 从事一般出入口守护时", "C: 从事一般区域巡逻时", "D: 协助处置纠纷时"],
+                correctAnswer: "A",
+                explanation: "根据相关规定，保安员只有在从事武装守护押运任务时，在符合法定条件的情况下才能使用武器。"
+            },
+            {
+                id: 6,
+                type: "single",
+                question: "在机动车道与非机动车道之间设有隔离设施的路段，（ ）。",
+                options: ["A: 可以临时停车", "B: 可以长时间停车", "C: 可以随意停车", "D: 不得停车"],
+                correctAnswer: "D",
+                explanation: "根据道路交通安全法，设有隔离设施的路段，车辆不得停车。"
+            },
+            {
+                id: 7,
+                type: "single",
+                question: "机动车在路边停车时，机动车驾驶人（ ），上下人员或者装卸物品后，立即驶离。",
+                options: ["A: 可以下车休息", "B: 可以下车装卸物品", "C: 不得离车", "D: 在车上，可以不拉手刹"],
+                correctAnswer: "C",
+                explanation: "路边临时停车时，驾驶人不得离车，上下人员或装卸物品后应立即驶离。"
+            },
+            {
+                id: 8,
+                type: "single",
+                question: "机动车在距离铁路道口30米以内的路段上（ ）。",
+                options: ["A: 不得停车", "B: 可以临时停车", "C: 可以长时间停车", "D: 可以随意停车"],
+                correctAnswer: "A",
+                explanation: "根据道路交通安全法，铁路道口30米内禁止停车。"
+            },
+            {
+                id: 9,
+                type: "single",
+                question: "物业小区停车场，必须实行严格的（ ）制度。",
+                options: ["A: 车辆出入登记", "B: 车辆安全技术检验", "C: 机动车号牌管理", "D: 车辆保养管理"],
+                correctAnswer: "A",
+                explanation: "物业小区停车场应实行严格的车辆出入登记制度，以加强安全管理。"
+            },
+            {
+                id: 10,
+                type: "single",
+                question: "保安员在消防控制室接到火灾警报或发现火灾时应首先（ ）。",
+                options: ["A: 确认火情，及时启动消防设施并报警", "B: 组织人员救援", "C: 立刻抢救贵重物资", "D: 立刻组织人员疏散"],
+                correctAnswer: "A",
+                explanation: "消防控制室值班人员首要任务是确认火情，启动消防设施并报警。"
+            },
+            {
+                id: 11,
+                type: "single",
+                question: "在物业小区内，机动车可以在（ ）停放。",
+                options: ["A: 人行道", "B: 车行道", "C: 小区通道", "D: 指定位置"],
+                correctAnswer: "D",
+                explanation: "物业小区内机动车应在指定位置停放，不得占用消防通道和他人车位。"
+            },
+            {
+                id: 12,
+                type: "single",
+                question: "在物业小区内，业主可以（ ）。",
+                options: ["A: 练车", "B: 试车", "C: 低速行驶", "D: 修车"],
+                correctAnswer: "C",
+                explanation: "物业小区内车辆应低速行驶，确保行人安全，不得练车、试车或修车。"
+            },
+            {
+                id: 13,
+                type: "single",
+                question: "接到火灾警报后，消防控制室值守人员确认火情的做法错误的是（ ）。",
+                options: ["A: 通知报警区域的巡查人员到现场确认", "B: 通知报警区域的工作人员到现场确认", "C: 控制室职守人员必须立刻到现场确认", "D: 利用控制室的监控设备和报警设备确认"],
+                correctAnswer: "C",
+                explanation: "消防控制室值守人员应坚守岗位，利用监控和报警设备确认火情，不应立即离开控制室。"
+            },
+            {
+                id: 14,
+                type: "single",
+                question: "干粉灭火器扑救可燃、易燃液体火灾时，应对准（ ）扫射。",
+                options: ["A: 火焰上部", "B: 火焰中部", "C: 火焰中下部", "D: 火焰根部"],
+                correctAnswer: "D",
+                explanation: "使用干粉灭火器时应对准火焰根部扫射，以隔绝氧气达到灭火效果。"
+            },
+            {
+                id: 15,
+                type: "single",
+                question: "关于保安员取得《保安员证》条件，下列说法正确的是（ ）。",
+                options: ["A: 必须通过公安机关的审查并且留存指纹信息", "B: 必须通过劳动与社会保障部门的审查并且留存指纹信息", "C: 必须通过公安机关的审查并且留存体貌特征信息", "D: 必须通过劳动与社会保障部门的审查并且留存体貌特征信息"],
+                correctAnswer: "A",
+                explanation: "根据《保安服务管理条例》，保安员需通过公安机关审查并留存指纹信息才能取得保安员证。"
+            },
+            {
+                id: 16,
+                type: "single",
+                question: "关于保安员取得职业资格条件，下列说法正确的是（ ）。",
+                options: ["A: 必须是初中以上学历的中国公民", "B: 必须是高中以上学历的中国公民", "C: 必须是政治过硬、作风优良的中国公民", "D: 必须是通过劳动和社会保障部门组织的考试且成绩合格的中国公民"],
+                correctAnswer: "A",
+                explanation: "保安员职业资格要求具有初中以上学历的中国公民，经培训合格后取得。"
+            },
+            {
+                id: 17,
+                type: "single",
+                question: "保安押运公司为某银行护送款项，途中突然发生爆胎，造成运钞车无法行进，下列做法错误的是（ ）。",
+                options: ["A: 立即报警", "B: 向本单位报告", "C: 请求银行派车将款项接走", "D: 严密看管所押物品"],
+                correctAnswer: "C",
+                explanation: "押运途中发生故障，应报警并向本单位报告，严密看管物品，不应让银行派车接款，以免增加风险。"
+            },
+            {
+                id: 18,
+                type: "single",
+                question: "保安押运公司为某银行护送款项，途中突然发生爆胎，恰逢本公司运钞车途经此处，表示可以帮忙送款，下列做法错误的是（ ）。",
+                options: ["A: 婉言谢绝", "B: 表示同意", "C: 表示已报告领导，安排解决", "D: 表示自己能够解决"],
+                correctAnswer: "B",
+                explanation: "押运途中不得随意将押运物品转交他人，即使是本公司车辆也不可以，应等待公司安排救援。"
+            },
+            {
+                id: 19,
+                type: "single",
+                question: "保安押运公司为某银行护送款项，发现可疑车辆长时间跟随运钞车，下列做法错误的是（ ）。",
+                options: ["A: 提高警惕不予理睬", "B: 记清车号上报单位", "C: 提高警惕做好准备", "D: 联系公安机关"],
+                correctAnswer: "A",
+                explanation: "发现可疑车辆跟随应提高警惕，记下车号上报并联系公安机关，不能不予理睬。"
+            },
+            {
+                id: 20,
+                type: "single",
+                question: "以下停车场中，属于公共停车场的是（ ）。",
+                options: ["A: 物业小区自用停车场", "B: 大型超市设置的停车场", "C: 事业单位内部停车场", "D: 写字楼自用停车场"],
+                correctAnswer: "B",
+                explanation: "大型超市设置的停车场面向社会公众开放，属于公共停车场。"
+            },
+            {
+                id: 21,
+                type: "single",
+                question: "火灾得到确认后，消防控制室值守人员不应该（ ）。",
+                options: ["A: 立即将火灾报警联动控制开关转入自动状态", "B: 打开常闭式防火门", "C: 联动控制防火门、防火卷帘", "D: 立刻拨打\"119\"报警"],
+                correctAnswer: "B",
+                explanation: "火灾时应关闭防火门防止火势蔓延，不应打开常闭式防火门。"
+            },
+            {
+                id: 22,
+                type: "single",
+                question: "对突发性火灾事故的处理顺序，下列正确的一项是（ ）。",
+                options: ["A: 确认火情-->及时报警-->组织疏散与扑救-->启动应急预案", "B: 确认火情-->将火灾报警联动控制开关转入自动状态同时拨打电话报警-->启动应急预案-->组织疏散与扑救", "C: 确认火情-->及时报警-->启动应急预案-->组织疏散与扑救"],
+                correctAnswer: "B",
+                explanation: "火灾确认后，首先应将报警系统转入自动状态并报警，然后启动应急预案，组织疏散与扑救。"
+            },
+            {
+                id: 23,
+                type: "single",
+                question: "车辆进入小区停车场时，驾驶人不能（ ）。",
+                options: ["A: 在停车场内加油", "B: 按照规定方向行驶", "C: 保持停车场内清洁", "D: 在车轮上加一把锁"],
+                correctAnswer: "A",
+                explanation: "停车场内严禁加油，以防发生火灾。"
+            },
+            {
+                id: 24,
+                type: "single",
+                question: "车辆在停稳前，（ ）。",
+                options: ["A: 不得开车门和上下人员", "B: 可以开关车门，但是不得下乘客", "C: 可以开关车门，但是不得上乘客", "D: 只要车速低，可以随时开关车门和上下人员"],
+                correctAnswer: "A",
+                explanation: "车辆停稳前不得开车门和上下人员，以防发生事故。"
+            },
+            {
+                id: 25,
+                type: "single",
+                question: "机动车进入停车场时，驾驶人可以随身携带（ ）。",
+                options: ["A: 酒精", "B: 炸药", "C: 鞭炮", "D: 打火机"],
+                correctAnswer: "D",
+                explanation: "打火机可以携带，但酒精、炸药、鞭炮等易燃易爆物品严禁带入停车场。"
+            },
+            {
+                id: 26,
+                type: "single",
+                question: "高层建筑发生火灾时，人员只能通过（ ）渠道逃生。",
+                options: ["A: 疏散楼梯", "B: 普通电梯", "C: 跳楼", "D: 货运电梯"],
+                correctAnswer: "A",
+                explanation: "火灾时只能通过疏散楼梯逃生，电梯可能因断电或烟雾无法使用，跳楼危险。"
+            },
+            {
+                id: 27,
+                type: "single",
+                question: "火灾扑灭后，起火单位应（ ）。",
+                options: ["A: 迅速到现场抢救物资", "B: 尽快抢修设施争取复产", "C: 保护现场", "D: 拨打119"],
+                correctAnswer: "C",
+                explanation: "火灾扑灭后应保护现场，以便调查火灾原因。"
+            },
+            {
+                id: 28,
+                type: "single",
+                question: "在火灾现场，当生命受到严重威胁，随时有被大火吞噬的危险，如果被迫必须跳楼逃生时，下列做法错误的是（ ）。",
+                options: ["A: 用棉被、床单保护好头部、胸部等重点部位", "B: 先抛下一些物品，以增加缓冲", "C: 保证背部先落地，增加缓冲，尽量减少对重点部位的伤害", "D: 利用身边的绳子或将床单、被罩等撕成条状连接起来，一端拴在窗格或其它突出物上，顺沿滑下逃生"],
+                correctAnswer: "C",
+                explanation: "跳楼时应保证双脚先落地，而不是背部先落地，以减少伤害。"
+            },
+            {
+                id: 29,
+                type: "single",
+                question: "对初起火灾扑救方法，下列叙述错误的是（ ）。",
+                options: ["A: 应争分夺秒，奋力将小火控制、扑灭", "B: 看到房间有浓烟和火焰时，应立即开窗", "C: 坚持生命至上，救人第一的救援原则", "D: 使用身边的灭火器材"],
+                correctAnswer: "B",
+                explanation: "看到浓烟和火焰时不应立即开窗，以免空气进入加速燃烧。"
+            },
+            {
+                id: 30,
+                type: "single",
+                question: "保安员在发电厂的固定岗位值勤时，遇有火灾发生，首先要做的是（ ）。",
+                options: ["A: 抢救受伤人员", "B: 拉电闸断电并报警", "C: 立即报警", "D: 组织人员救火"],
+                correctAnswer: "B",
+                explanation: "发电厂发生火灾，首先应切断电源防止触电，然后报警。"
+            },
+            {
+                id: 31,
+                type: "single",
+                question: "保安员在目标部位值勤，遇有强行闯入重点区域的人员，正确的处理方法是（ ）。",
+                options: ["A: 组织保安员对闯入人员进行拦截", "B: 按照应急方案的要求予以阻止，并向客户单位报告", "C: 立即关闭出入大门", "D: 避开正面冲突，向客户单位报告"],
+                correctAnswer: "B",
+                explanation: "应按应急预案阻止闯入者，同时报告客户单位，不可擅自采取过激行动。"
+            },
+            {
+                id: 32,
+                type: "single",
+                question: "保安员小张和小李在目标部位流动岗巡查时，发现无证车辆强行进入目标部位时正确的做法是（ ）。",
+                options: ["A: 向客户单位报告后，两人一起阻拦无证车辆进入", "B: 小李立即向客户单位报告，小张记下车牌、车型和颜色", "C: 小张和小李一起阻拦无证车辆进入", "D: 两人记下车牌、车型和颜色"],
+                correctAnswer: "B",
+                explanation: "一人报告，另一人记录车辆信息，分工合作。"
+            },
+            {
+                id: 33,
+                type: "single",
+                question: "保安员在流动岗值勤时遇有纠纷或滋事等情况，正确的做法是（ ）。",
+                options: ["A: 现场能处置的立即处置，否则及时报告客户单位", "B: 立即报告客户单位，等待处理", "C: 立即向上级领导报告，等待处理", "D: 继续完成巡查任务"],
+                correctAnswer: "A",
+                explanation: "能现场处置的立即处置，不能处置的及时报告。"
+            },
+            {
+                id: 34,
+                type: "single",
+                question: "保安公司从事保安武装守护服务须经（ ）批准。",
+                options: ["A: 公安部", "B: 国防部", "C: 国务院", "D: 省、自治区、直辖市人民政府公安机关"],
+                correctAnswer: "D",
+                explanation: "保安武装守护服务需经省、自治区、直辖市公安机关批准。"
+            },
+            {
+                id: 35,
+                type: "single",
+                question: "保安员严某在配合公安机关巡逻中，发现一醉酒人携带有一把匕首，警察就要求严某将该醉酒人带到公安派出所盘问，事后警察将醉酒人的这把匕首留在派出所。警察将醉酒人的这把匕首留在派出所的行为是（ ）。",
+                options: ["A: 收缴", "B: 扣押", "C: 没收", "D: 保管"],
+                correctAnswer: "B",
+                explanation: "公安机关对违法嫌疑人的物品采取的临时性控制措施属于扣押。"
+            },
+            {
+                id: 36,
+                type: "single",
+                question: "保安押运的勘察内容包括（ ）。",
+                options: ["A: 任务的性质、类型、起运地、目的地", "B: 甲方单位的经营状况", "C: 甲方单位的付款方式", "D: 甲方单位的法人及相关部门负责人的基本情况"],
+                correctAnswer: "A",
+                explanation: "保安押运勘察主要是了解任务的性质、类型、路线等安全相关信息。"
+            },
+            {
+                id: 37,
+                type: "single",
+                question: "张三在就餐时与李四发生纠纷，张三顺手拿起身边的座椅朝李四头部砸去，李四边躲边随手拿起身边的价值数千元的花瓶进行抵挡，结果致花瓶破损，李四的这种行为属于（ ）。",
+                options: ["A: 紧急避险", "B: 自救行为", "C: 正当防卫", "D: 毁坏财产"],
+                correctAnswer: "C",
+                explanation: "李四为保护自己免受正在进行的不法侵害而采取的行为属于正当防卫。"
+            },
+            {
+                id: 38,
+                type: "single",
+                question: "甲和乙发生殴斗，甲身强体壮，乙瘦弱矮小，乙被打得鼻青脸肿，此时，刚好甲的小妹丙从旁边走过，乙挣脱了甲，冲过去向丙脸上一顿猛捶，造成丙一耳失聪。乙的这种行为属于（ ）。",
+                options: ["A: 正当防卫", "B: 紧急避险", "C: 自救行为", "D: 犯罪行为"],
+                correctAnswer: "D",
+                explanation: "乙对丙实施伤害，丙不是不法侵害人，乙的行为构成故意伤害罪。"
+            },
+            {
+                id: 39,
+                type: "single",
+                question: "保护好火灾现场，能为查清火灾发生的真正原因提供许多重要的证据，下列做法错误的是（ ）。",
+                options: ["A: 划出警戒区，指派专人看护，除事主外不准无关人员进入现场", "B: 火灾现场的一切遗留物，燃烧过的物质及其陈设的位置，必须保持原样", "C: 火灾现场的一切遗留物，未燃烧过的物质及其陈设的位置，必须保持原样", "D: 撤销现场保护，清扫火灾现场，必须得到当地公安消防监督机关的同意"],
+                correctAnswer: "A",
+                explanation: "火灾现场保护应禁止所有无关人员进入，包括事主。"
+            },
+            {
+                id: 40,
+                type: "single",
+                question: "下列物质中，（ ）燃烧所引发的火灾属B类火灾。",
+                options: ["A: 木材", "B: 沥青", "C: 钠", "D: 煤气"],
+                correctAnswer: "B",
+                explanation: "B类火灾指液体或可熔化的固体物质火灾，沥青属于此类。"
+            },
+            {
+                id: 41,
+                type: "single",
+                question: "以下叙述中，（ ）不是保安员应享有的权利。",
+                options: ["A: 签订劳动合同", "B: 征用车辆救灾抢险", "C: 接受安全教育培训", "D: 享受劳动保护"],
+                correctAnswer: "B",
+                explanation: "保安员没有征用车辆的权利，这是政府部门的职权。"
+            },
+            {
+                id: 42,
+                type: "single",
+                question: "保安员在履行工作职责过程中，依法行使（ ）权利时，不负刑事责任，但不能超过法律允许的范围。",
+                options: ["A: 管制交通", "B: 执法检查", "C: 正当防卫", "D: 武装押运"],
+                correctAnswer: "C",
+                explanation: "正当防卫是法律赋予公民的权利，不负刑事责任，但不得超过必要限度。"
+            },
+            {
+                id: 43,
+                type: "single",
+                question: "在确保环境安全的前提下，现场救护的原则是（ ）。",
+                options: ["A: 先救命，后治伤", "B: 先救呼喊的，后救没声音的", "C: 先救远处的，后救近处的", "D: 先救熟悉的，后救陌生的"],
+                correctAnswer: "A",
+                explanation: "现场救护遵循先救命后治伤的原则。"
+            },
+            {
+                id: 44,
+                type: "single",
+                question: "在道路交通活动中，当机动车行驶至车道减少的路段或路口时，机动车应当（ ）。",
+                options: ["A: 借道超车", "B: 依次交替通行", "C: 加速通过", "D: 抢道行驶"],
+                correctAnswer: "B",
+                explanation: "车道减少时应依次交替通行，确保交通安全。"
+            },
+            {
+                id: 45,
+                type: "single",
+                question: "正在道路上作业的清扫车在不影响其他车辆通行的情况下，可以（ ）。",
+                options: ["A: 不受行驶速度限制", "B: 不受车辆分道行驶的限制", "C: 不受交通信号灯的限制", "D: 不受交通标志的限制"],
+                correctAnswer: "B",
+                explanation: "作业车辆在不影响通行的情况下，可以不受分道行驶的限制。"
+            },
+            {
+                id: 46,
+                type: "single",
+                question: "在无交通信号和管理人员的铁路道口，行人应当（ ）。",
+                options: ["A: 保持原有速度通过", "B: 加速通过", "C: 随意通过", "D: 在确认无火车后迅速通过"],
+                correctAnswer: "D",
+                explanation: "通过无人看守的铁路道口，应确认安全后迅速通过。"
+            },
+            {
+                id: 47,
+                type: "single",
+                question: "机动车行经人行横道时，应当（ ）。",
+                options: ["A: 迅速通过", "B: 减速慢行", "C: 适当加速", "D: 鸣喇叭迅速通过"],
+                correctAnswer: "B",
+                explanation: "机动车行经人行横道时应减速慢行，遇行人通过应停车让行。"
+            },
+            {
+                id: 48,
+                type: "single",
+                question: "对重大火灾隐患这一概念叙述正确的是（ ）。",
+                options: ["A: 违反消防法律法规，可能导致火灾发生或火灾危害增大，并由此可能造成重大火灾事故和严重社会影响的各类潜在不安全因素", "B: 违反保安法律法规，必定导致火灾发生或火灾危害增大，并由此可能造成特大火灾事故和严重社会影响的各类潜在不安全因素", "C: 违反消防法律法规，必定导致火灾发生或火灾危害增大，并由此可能造成重大火灾事故和严重政治影响的各类潜在不安全因素", "D: 违反保安法律法规，可能导致火灾发生或火灾危害增大，并由此可能造成特大火灾事故和严重政治影响的各类潜在不安全因素"],
+                correctAnswer: "A",
+                explanation: "重大火灾隐患是指违反消防法律法规，可能导致火灾发生或危害增大，可能造成重大火灾事故和严重社会影响的潜在不安全因素。"
+            },
+            {
+                id: 49,
+                type: "single",
+                question: "（ ）符合用火规范。",
+                options: ["A: 在小区花园角落可以焚烧垃圾", "B: 消防控制室严禁使用明火", "C: 在楼道内焚烧垃圾", "D: 在小区内燃放烟花炮竹"],
+                correctAnswer: "B",
+                explanation: "消防控制室严禁使用明火，其他选项都存在火灾隐患。"
+            },
+            {
+                id: 50,
+                type: "single",
+                question: "机动车在停车场以外的其他地点临时停车时，应当（ ），但不得妨碍其他车辆和行人通行。",
+                options: ["A: 在非机动车道停车", "B: 紧靠道路右边停放", "C: 紧靠道路左边停放", "D: 选择路边停车"],
+                correctAnswer: "B",
+                explanation: "临时停车应紧靠道路右侧停放。"
+            },
+            {
+                id: 51,
+                type: "single",
+                question: "机动车距离交叉路口（ ）米以内不准停车。",
+                options: ["A: 20", "B: 30", "C: 40", "D: 50"],
+                correctAnswer: "D",
+                explanation: "交叉路口50米内禁止停车。"
+            },
+            {
+                id: 52,
+                type: "single",
+                question: "某保安公司保安员张三因就餐在饭店将与其发生争执的李四打成重伤，则张三直接侵犯李四的（ ）。",
+                options: ["A: 名誉权", "B: 自由权", "C: 平等权", "D: 健康权"],
+                correctAnswer: "D",
+                explanation: "将人打成重伤侵犯的是健康权。"
+            },
+            {
+                id: 53,
+                type: "single",
+                question: "保安员在固定岗位进行目标部位守护时应注意观察岗位周围的（ ）。",
+                options: ["A: 过往车辆", "B: 地形、地物和设备", "C: 标志性建筑物", "D: 流动人员"],
+                correctAnswer: "B",
+                explanation: "目标部位守护应注意观察周围的地形、地物和设备情况。"
+            },
+            {
+                id: 54,
+                type: "single",
+                question: "在现场急救中，对于有呼吸、有心跳，但无意识的伤员，应将其置于（ ）的体位更好。",
+                options: ["A: 仰卧位", "B: 俯卧位", "C: 坐位", "D: 侧卧位"],
+                correctAnswer: "D",
+                explanation: "有呼吸心跳但无意识的伤员应置于侧卧位，防止舌后坠或呕吐物阻塞气道。"
+            },
+            {
+                id: 55,
+                type: "single",
+                question: "在急救现场，当你一人面对额头损伤者、前臂骨折者及呼吸心跳停止者三名患者时，正确的救护顺序是（ ）。",
+                options: ["A: ①额头擦伤者 ②前臂骨折者 ③呼吸心跳停止者", "B: ①呼吸心跳停止者 ②前臂骨折者 ③额头擦伤者", "C: ①呼吸心跳停止者 ②额头擦伤者 ③前臂骨折者", "D: ①前臂骨折者 ②呼吸心跳停止者 ③额头擦伤者"],
+                correctAnswer: "B",
+                explanation: "急救应遵循先重后轻原则，呼吸心跳停止者最危急，应优先救护。"
+            },
+            {
+                id: 56,
+                type: "single",
+                question: "地震现场的救护原则是（ ）。",
+                options: ["A: 先远后近、先挖后救、先易后难", "B: 先近后远、先挖后救、先易后难", "C: 先远后近、先挖后救、先难后易", "D: 先近后远、先挖后救、先难后易"],
+                correctAnswer: "B",
+                explanation: "地震救护应先救近处、先挖后救、先救易救者。"
+            },
+            {
+                id: 57,
+                type: "single",
+                question: "刑法所调整的（ ）极其广泛。",
+                options: ["A: 法律关系", "B: 行政关系", "C: 社会关系", "D: 组织关系"],
+                correctAnswer: "C",
+                explanation: "刑法调整的是社会关系。"
+            },
+            {
+                id: 58,
+                type: "single",
+                question: "在目标部位守护中，流动岗一般是设置在（ ）或易出问题的部位区域。",
+                options: ["A: 重点单位的重要部位", "B: 防范工作的薄弱环节", "C: 客户单位认定的重要部位", "D: 保安公司认定的重要部位"],
+                correctAnswer: "B",
+                explanation: "流动岗通常设置在防范薄弱环节或易出问题的区域。"
+            },
+            {
+                id: 59,
+                type: "single",
+                question: "安全技术防范与人力防范相比较，不具有（ ）的优点。",
+                options: ["A: 不间断地连续工作", "B: 隐蔽性强", "C: 不受环境影响", "D: 成本低"],
+                correctAnswer: "D",
+                explanation: "安全技术防范初期投入成本较高，不具有成本低的优点。"
+            },
+            {
+                id: 60,
+                type: "single",
+                question: "在实施目标部位守护工作中，目标部位自身物理化学变化或自然界不可抗力是引发安全隐患的（ ）。",
+                options: ["A: 主观因素", "B: 客观因素", "C: 人为因素", "D: 自然因素"],
+                correctAnswer: "D",
+                explanation: "自身物理化学变化或自然不可抗力属于自然因素。"
+            },
+            {
+                id: 61,
+                type: "single",
+                question: "在实施目标部位守护工作中，用火用电或存放物品自燃是引发目标部位安全隐患的（ ）。",
+                options: ["A: 主观因素", "B: 物的因素", "C: 自然因素", "D: 环境因素"],
+                correctAnswer: "B",
+                explanation: "用火用电或物品自燃属于物的因素。"
+            },
+            {
+                id: 62,
+                type: "single",
+                question: "保安员在特殊岗位值勤时，一定要携带（ ）。",
+                options: ["A: 对讲机", "B: 防护用具或器材", "C: 防毒面罩", "D: 防刺背心"],
+                correctAnswer: "B",
+                explanation: "特殊岗位值勤应根据需要携带相应的防护用具。"
+            },
+            {
+                id: 63,
+                type: "single",
+                question: "保安员在履行交接班程序时，需要完成的书面任务是（ ）。",
+                options: ["A: 工作小结", "B: 个人日记", "C: 记录当班工作情况", "D: 工作计划"],
+                correctAnswer: "C",
+                explanation: "交接班时需要记录当班工作情况。"
+            },
+            {
+                id: 64,
+                type: "single",
+                question: "保安武装守护的主要任务不包括（ ）。",
+                options: ["A: 发生治安案件后迅速破案", "B: 确保目标的安全", "C: 防止违法犯罪分子的破坏活动", "D: 预防和处置可能危害守护目标的事故和灾害"],
+                correctAnswer: "A",
+                explanation: "破案是公安机关的职责，不是保安武装守护的主要任务。"
+            },
+            {
+                id: 65,
+                type: "single",
+                question: "保安员在执行守护任务时发现纠纷，正确的处理程序是（ ）。",
+                options: ["A: 向客户单位报告后，等待有关人员到场", "B: 立即报警", "C: 立即劝解，向客户单位报告，请有关人员到场解决", "D: 在劝解无效后报警"],
+                correctAnswer: "C",
+                explanation: "应先劝解并报告客户单位，必要时请相关人员到场解决。"
+            },
+            {
+                id: 66,
+                type: "single",
+                question: "保安员小王在饮用水水厂值勤，负责巡查水管管道安全。某天，他在巡查时发现水管爆裂，小王正确的做法是（ ）。",
+                options: ["A: 为控制水外溢，小王用塑料袋缠住漏水的部位", "B: 立即向客户单位报告，继续进行巡查", "C: 向客户单位报告后，在看守漏水管道同时等待有关人员前来处理", "D: 立即跑回驻地找人去维修"],
+                correctAnswer: "C",
+                explanation: "应先报告客户单位，然后看守现场等待专业人员处理。"
+            },
+            {
+                id: 67,
+                type: "single",
+                question: "火灾自动报警系统工作原理是通过安装在保护现场的火灾探测器，感知（ ）。",
+                options: ["A: 火灾类型", "B: 火灾所造成的火焰、热量和烟雾", "C: 火灾等级", "D: 燃烧物质的主要材料"],
+                correctAnswer: "B",
+                explanation: "火灾探测器感知火焰、热量或烟雾等火灾特征信号。"
+            },
+            {
+                id: 68,
+                type: "single",
+                question: "成人胸外按压的正确位置是（ ）。",
+                options: ["A: 胸部正中、乳头连线水平", "B: 胸骨上1/3处", "C: 胸骨下1/3处", "D: 胸部左侧靠近心脏处"],
+                correctAnswer: "A",
+                explanation: "成人胸外按压位置是胸部正中、两乳头连线水平。"
+            },
+            {
+                id: 69,
+                type: "single",
+                question: "胸外心脏按压频率是每分钟（ ）。",
+                options: ["A: 80次", "B: 60次", "C: 120次", "D: 100次"],
+                correctAnswer: "D",
+                explanation: "胸外心脏按压频率为每分钟100-120次。"
+            },
+            {
+                id: 70,
+                type: "single",
+                question: "在室内狭小空间使用二氧化碳灭火器灭火后，操作者应（ ）。",
+                options: ["A: 迅速离开", "B: 迅速拿开灭火器", "C: 对准火焰根部", "D: 倒置灭火器"],
+                correctAnswer: "A",
+                explanation: "二氧化碳灭火后会产生大量二氧化碳气体，在狭小空间可能造成窒息，应迅速离开。"
+            },
+            {
+                id: 71,
+                type: "single",
+                question: "接到报警信号后，消防控制室值班人员首先要做的是（ ）。",
+                options: ["A: 立刻拨打\"119\"报警", "B: 启动自动灭火系统", "C: 组织扑救及人员疏散", "D: 确认火灾"],
+                correctAnswer: "D",
+                explanation: "接到报警后首先要确认是否是真实火情。"
+            },
+            {
+                id: 72,
+                type: "single",
+                question: "在现场急救中，口对口人工吹气时，每口气的吹气时间是（ ）。",
+                options: ["A: 3秒钟", "B: 2秒钟", "C: 1秒钟", "D: 0.1秒钟"],
+                correctAnswer: "C",
+                explanation: "人工呼吸每次吹气时间约1秒。"
+            },
+            {
+                id: 73,
+                type: "single",
+                question: "（ ）不属于消防控制室需要保存和归档的。",
+                options: ["A: 控制室设备运行状况", "B: 本单位接报警记录", "C: 消防安全设施使用情况", "D: 控制室设备检修检测报告"],
+                correctAnswer: "C",
+                explanation: "消防安全设施使用情况不属于消防控制室需要保存的档案。"
+            },
+            {
+                id: 74,
+                type: "single",
+                question: "某市居民张三为表达某企业排污对自己日常生活造成不良影响的不满，向该市公安机关提出游行的申请，张三申请游行的权利属于宪法赋予公民的（ ）。",
+                options: ["A: 经济权利", "B: 生活权利", "C: 平等权利", "D: 政治权利"],
+                correctAnswer: "D",
+                explanation: "游行示威权属于公民的政治权利。"
+            },
+            {
+                id: 75,
+                type: "single",
+                question: "在实施目标部位守护工作中，外部人员非法进入目标部位是由于（ ）造成的安全隐患。",
+                options: ["A: 主观因素", "B: 人的因素", "C: 自然因素", "D: 客观因素"],
+                correctAnswer: "B",
+                explanation: "外部人员非法进入属于人的因素。"
+            },
+            {
+                id: 76,
+                type: "single",
+                question: "在目标部位守护勤务工作中，应该根据（ ）安装配置相应的安全技术防范设置设施。",
+                options: ["A: 客户单位要求", "B: 保安公司要求", "C: 技防公司要求", "D: 重要部位的不同特点"],
+                correctAnswer: "D",
+                explanation: "应根据重要部位的不同特点配置相应的技防设施。"
+            },
+            {
+                id: 77,
+                type: "single",
+                question: "保安武装守护的任务不包括（ ）。",
+                options: ["A: 发生治安案件后迅速破案", "B: 确保目标的安全", "C: 协助服务单位维护守护区域的秩序", "D: 预防和处置可能危害守护目标的事故和灾害"],
+                correctAnswer: "A",
+                explanation: "破案是公安机关的职责。"
+            },
+            {
+                id: 78,
+                type: "single",
+                question: "保安员小陈在石油化工厂执行巡查任务时，发现油料库房旁边通道的中间有一个约1米见方的纸箱子，他走到跟前仔细观察箱子的外观，没有任何标识，无法确认是什么物品。小陈处理箱子的正确做法是（ ）。",
+                options: ["A: 打开箱子查看", "B: 向客户单位报告后，继续进行巡查", "C: 向客户单位报告后，留在原地看护箱子等待有关人员处理", "D: 直接将箱子搬走"],
+                correctAnswer: "C",
+                explanation: "发现可疑物品应报告并看守现场，等待专业人员处理。"
+            },
+            {
+                id: 79,
+                type: "single",
+                question: "某市保安服务公司客户经理甲因为对财务部经理乙不满，于是在日常生活中通过编造信息、谩骂、散发小传单等形式损害乙的名誉，致使乙精神受到严重损害。甲的这种行为属于（ ）。",
+                options: ["A: 故意伤害行为", "B: 招摇撞骗行为", "C: 寻衅滋事行为", "D: 侮辱他人行为"],
+                correctAnswer: "D",
+                explanation: "通过编造信息、谩骂等方式损害他人名誉属于侮辱行为。"
+            },
+            {
+                id: 80,
+                type: "single",
+                question: "对保安员进行职业技能鉴定的基本标准是（ ）。",
+                options: ["A: 《保安员国家职业标准（试行）》", "B: 《保安服务管理条例》", "C: 《保安服务操作规程与质量控制》", "D: 《公安机关实施保安服务管理条例办法》"],
+                correctAnswer: "A",
+                explanation: "保安员职业技能鉴定以《保安员国家职业标准》为基本标准。"
+            },
+            {
+                id: 81,
+                type: "single",
+                question: "保安员小李和小张在对目标部位进行巡查时，看到存储间窗户的玻璃被人砸碎，两人立即上前看个究竟，发现库房的物品有明显的被盗痕迹。此时，两人正确的做法是（ ）。",
+                options: ["A: 立即向客户单位报告，保护现场防止无关人员进入", "B: 向客户单位报告后，两人进入现场清点丢失的物品", "C: 立即向客户单位报告，回去组织人员对现场进行保护", "D: 两人守在存储间外围观察周围动静，寻找可疑人行迹"],
+                correctAnswer: "A",
+                explanation: "发现被盗应立即报告并保护现场。"
+            },
+            {
+                id: 82,
+                type: "single",
+                question: "在目标部位值勤的保安员遇有火灾、盗窃或其他需要报警的情形时，报警的内容是（ ）。",
+                options: ["A: 报警人姓名，警情发生的原因、经过和结果", "B: 报警人姓名、联系电话、报警事由，发生单位的名称和位置", "C: 报警人姓名、联系电话，发生单位的名称", "D: 报警人姓名、报警事由，发生单位的名称和位置"],
+                correctAnswer: "B",
+                explanation: "报警应包含报警人信息、事由和详细地址。"
+            },
+            {
+                id: 83,
+                type: "single",
+                question: "目标部位是客户单位防护的重点，在查验出入证件时应严格把关，遇伪造证件时正确的做法是（ ）。",
+                options: ["A: 将证件撕毁，以免再欺骗他人", "B: 将证件交还本人，禁止通行", "C: 将证件留存，向客户单位报告等待有关人员处置", "D: 询问证件的来源"],
+                correctAnswer: "C",
+                explanation: "发现伪造证件应扣留并报告客户单位处理。"
+            },
+            {
+                id: 84,
+                type: "single",
+                question: "下列不属于目标部位守护方案的内容是（ ）。",
+                options: ["A: 岗位与人员部署", "B: 常见紧急情况的处置", "C: 岗位职责", "D: 客户单位对保安员的评价"],
+                correctAnswer: "D",
+                explanation: "客户单位评价不属于守护方案内容。"
+            },
+            {
+                id: 85,
+                type: "single",
+                question: "保安公司在提供武装守护服务时，可依法为保安员配备（ ）。",
+                options: ["A: 管制刀具", "B: 电警棍", "C: 防暴枪", "D: 制式武器"],
+                correctAnswer: "C",
+                explanation: "武装守护可配备防暴枪等非致命性武器。"
+            },
+            {
+                id: 86,
+                type: "single",
+                question: "单位自行招聘的保安员（ ）从事保安武装守护服务。",
+                options: ["A: 不允许", "B: 需行政审批后允许", "C: 不用行政审批可允许", "D: 经过培训后可"],
+                correctAnswer: "B",
+                explanation: "武装守护服务需要经过公安机关审批。"
+            },
+            {
+                id: 87,
+                type: "single",
+                question: "以下叙述中，（ ）不是保安员应享有的权利。",
+                options: ["A: 开展执法检查", "B: 签订劳动合同", "C: 接受教育培训", "D: 实施紧急避险"],
+                correctAnswer: "A",
+                explanation: "保安员没有执法检查权。"
+            },
+            {
+                id: 88,
+                type: "single",
+                question: "某保安服务公司保安员牛某因其户口所在地的村委会要选举村长，于是向公司请假返家参加选举。牛某参加选举的权利属于宪法赋予公民的（ ）。",
+                options: ["A: 人身权利", "B: 经济权利", "C: 平等权利", "D: 政治权利"],
+                correctAnswer: "D",
+                explanation: "选举权属于公民的政治权利。"
+            },
+            {
+                id: 89,
+                type: "single",
+                question: "下列属于我国公民基本义务的是（ ）。",
+                options: ["A: 遵守公共秩序", "B: 申诉控告", "C: 检举揭发", "D: 接受高等教育"],
+                correctAnswer: "A",
+                explanation: "遵守公共秩序是公民基本义务。"
+            },
+            {
+                id: 90,
+                type: "single",
+                question: "保安员张某在大型活动现场发现有一青年手持刀片正在切割一名女青年的手提包，其辨识这一可疑情况的方法属于（ ）。",
+                options: ["A: 直接观察法", "B: 仪器探测法", "C: 接受举报法", "D: 查问法"],
+                correctAnswer: "A",
+                explanation: "通过直接观察发现可疑情况属于直接观察法。"
+            },
+            {
+                id: 91,
+                type: "single",
+                question: "保安员与现场工作人员一起通过组成一道人墙的方式引导、疏散密集人群，这一疏导方法被称为（ ）。",
+                options: ["A: 人群疏散法", "B: 人群隔离法", "C: 人群疏导法", "D: 人墙法"],
+                correctAnswer: "D",
+                explanation: "组成人墙引导疏散的方法称为人墙法。"
+            },
+            {
+                id: 92,
+                type: "single",
+                question: "下列设备属于停车场管理系统的出口设备是（ ）。",
+                options: ["A: 报警控制器", "B: 云台镜头控制器", "C: 摄像设备", "D: 录像设备"],
+                correctAnswer: "C",
+                explanation: "摄像设备是停车场管理系统出口设备之一。"
+            },
+            {
+                id: 93,
+                type: "single",
+                question: "机动车行经交通信号灯控制的交叉路口遇到停止信号，没有停止线的，机动车应（ ）。",
+                options: ["A: 停在路口以外", "B: 停在路口以内", "C: 随意停车", "D: 可以继续行驶"],
+                correctAnswer: "A",
+                explanation: "遇停止信号，没有停止线的应停在路口以外。"
+            },
+            {
+                id: 94,
+                type: "single",
+                question: "在城市道路上，货运机动车在留有安全位置的情况下，车厢内可以附载临时作业人员（ ）人。",
+                options: ["A: 1-5", "B: 5-6", "C: 7-8", "D: 9-10"],
+                correctAnswer: "A",
+                explanation: "货运机动车车厢内可附载1-5名临时作业人员。"
+            },
+            {
+                id: 95,
+                type: "single",
+                question: "警车、消防车、救护车、工程救险车执行紧急任务时，其他车辆（ ）。",
+                options: ["A: 加速穿行", "B: 谨慎超越", "C: 视情让行", "D: 应当让行"],
+                correctAnswer: "D",
+                explanation: "特种车辆执行紧急任务时，其他车辆应当让行。"
+            },
+            {
+                id: 96,
+                type: "single",
+                question: "根据场所容量、通道及活动特点，保安员可采取（ ）的措施防止人群拥挤。",
+                options: ["A: 设置临时隔离区", "B: 检查场外人员随身携带的物品", "C: 实施现场管制", "D: 对不服从管理的人员进行治安处罚"],
+                correctAnswer: "A",
+                explanation: "设置临时隔离区是防止人群拥挤的有效措施。"
+            },
+            {
+                id: 97,
+                type: "single",
+                question: "保安员周某在一次随身护卫工作中，护卫对象遭遇突然袭击，这时他应当采取的应急措施是（ ）。",
+                options: ["A: 立即严惩袭击者", "B: 对护卫对象采取保护措施", "C: 立即扣押袭击者", "D: 立即搜查袭击者"],
+                correctAnswer: "B",
+                explanation: "首要任务是对护卫对象采取保护措施。"
+            },
+            {
+                id: 98,
+                type: "single",
+                question: "保安员张某和李某在火车站巡逻时，发现一男青年神色慌张，行为诡秘，这两名保安员识别这一可疑情况使用的方法是（ ）。",
+                options: ["A: 查问法", "B: 直接观察法", "C: 判断法", "D: 视觉判断法"],
+                correctAnswer: "B",
+                explanation: "通过直接观察发现可疑情况。"
+            },
+            {
+                id: 99,
+                type: "single",
+                question: "不属于人员密集场所巡逻特点的是（ ）。",
+                options: ["A: 危险因素不确定", "B: 勤务难度大", "C: 岗位固定", "D: 处置要求高"],
+                correctAnswer: "C",
+                explanation: "人员密集场所巡逻岗位不固定，需要流动巡查。"
+            },
+            {
+                id: 100,
+                type: "single",
+                question: "某天，某市环保机关工作人员甲等一行3人到该市一大型造纸厂进行排污检查。当时保安员乙、丙在该纸厂出入口值班，乙、丙以客户单位正在生产、不同意进入为由，拒不让甲等人进厂。最终致使甲等人无法履行排污检查职责。乙、丙的这种行为属于（ ）。",
+                options: ["A: 正当业务行为", "B: 妨害公务行为", "C: 规范勤务行为", "D: 正当职务行为"],
+                correctAnswer: "B",
+                explanation: "阻碍国家机关工作人员依法执行职务属于妨害公务行为。"
+            },
+            {
+                id: 101,
+                type: "single",
+                question: "（ ）不属于我国保安服务的主要任务。",
+                options: ["A: 维护服务区域内的正常秩序", "B: 预防服务区域内的治安事件", "C: 调解服务区域内的家庭纠纷", "D: 协助保护服务区域内的违法犯罪现场"],
+                correctAnswer: "C",
+                explanation: "调解家庭纠纷不是保安服务的主要任务。"
+            },
+            {
+                id: 102,
+                type: "single",
+                question: "下列不属于我国公民基本义务的是（ ）。",
+                options: ["A: 依法纳税", "B: 维护民族团结", "C: 享受义务教育", "D: 保守国家秘密"],
+                correctAnswer: "C",
+                explanation: "享受义务教育是权利，不是义务。"
+            },
+            {
+                id: 103,
+                type: "single",
+                question: "不属于人员密集场所巡逻特点的是（ ）。",
+                options: ["A: 危险因素不确定", "B: 勤务难度大", "C: 精力、体能消耗大", "D: 需要大批交通工具"],
+                correctAnswer: "D",
+                explanation: "人员密集场所巡逻不一定需要大批交通工具。"
+            },
+            {
+                id: 104,
+                type: "single",
+                question: "在防火巡查时，要检查用火、用电有无违章情况，下列案例属于安全用火、用电的是（ ）。",
+                options: ["A: 某美容美发厅用电暖器烘烤毛巾", "B: 某人离开办公室，所有用电设备处于关闭状态", "C: 某人用塑料衣架在电线上晾晒衣服", "D: 某人装修房间，私拉电气线路"],
+                correctAnswer: "B",
+                explanation: "离开时关闭用电设备是安全用电行为。"
+            },
+            {
+                id: 105,
+                type: "single",
+                question: "保安员对仓库进行消防安全管理时，正确的做法是（ ）。",
+                options: ["A: 必须将危险物品与一般物品分开存放", "B: 危险物品与一般物品可以不分开存放但要加强检查", "C: 离开仓库时，可以切断电源，包括消防电源", "D: 为预防仓库被盗，离开仓库时要锁上安全出口"],
+                correctAnswer: "A",
+                explanation: "危险物品必须与一般物品分开存放。"
+            },
+            {
+                id: 106,
+                type: "single",
+                question: "在现场急救中，实施心肺复苏时，胸外心脏按压与人工呼吸的比例为（ ）。",
+                options: ["A: 5：1", "B: 30：2", "C: 10：1", "D: 15：2"],
+                correctAnswer: "B",
+                explanation: "心肺复苏按压与呼吸比为30:2。"
+            },
+            {
+                id: 107,
+                type: "single",
+                question: "某重点要害单位由于经费原因，在警戒区内有部分地方没有被技术防范系统覆盖，此部分地区就是该单位的（ ）。",
+                options: ["A: 防护区", "B: 禁区", "C: 盲区", "D: 监控区"],
+                correctAnswer: "C",
+                explanation: "技防系统未覆盖的区域称为盲区。"
+            },
+            {
+                id: 108,
+                type: "single",
+                question: "单位内部可能引发灾害事故但还未造成现实危害的问题，称为（ ）。",
+                options: ["A: 刑事案件", "B: 安全隐患", "C: 治安事件", "D: 自然灾害"],
+                correctAnswer: "B",
+                explanation: "可能引发事故但未造成危害的问题称为安全隐患。"
+            },
+            {
+                id: 109,
+                type: "single",
+                question: "根据《娱乐场所管理条例》的规定，娱乐场所是以营利为目的、并向社会公众开放、消费者（ ）的场所。",
+                options: ["A: 自我表现", "B: 自我管理", "C: 自娱自乐", "D: 自我展示"],
+                correctAnswer: "C",
+                explanation: "娱乐场所是消费者自娱自乐的场所。"
+            },
+            {
+                id: 110,
+                type: "single",
+                question: "根据《物业管理条例》的规定，物业服务企业在安全管理方面应当协助做好物业管理区域内的（ ）工作。",
+                options: ["A: 治安管理", "B: 案件查处", "C: 安全防范", "D: 治安处罚"],
+                correctAnswer: "C",
+                explanation: "物业企业应协助做好安全防范工作。"
+            },
+            {
+                id: 111,
+                type: "single",
+                question: "在现场急救中，救护人员打开伤员气道的方法是（ ）。",
+                options: ["A: 仰头抬颈", "B: 仰头举颏", "C: 双下颌上提", "D: 头部垫高"],
+                correctAnswer: "B",
+                explanation: "打开气道的方法是仰头举颏法。"
+            },
+            {
+                id: 112,
+                type: "single",
+                question: "一旦发生火情（ ）将成为紧急信息汇集、显示、处理的中心，及时、准确地反馈火情的发展过程。",
+                options: ["A: 消防队", "B: 公安机关", "C: 消防控制室", "D: 保安值班室"],
+                correctAnswer: "C",
+                explanation: "消防控制室是火灾信息处理中心。"
+            },
+            {
+                id: 113,
+                type: "single",
+                question: "道路警告标线是（ ）。",
+                options: ["A: 促使道路使用者了解道路上的特殊情况，提高警觉，准备应变措施的标线", "B: 告知道路交通的通行、禁止、限制等特殊规定，车辆驾驶人及行人必须遵守的标线", "C: 指示车行道、行驶方向、路面边缘、停车位等的标线", "D: 说明车辆行驶时间范围、种类等的标线"],
+                correctAnswer: "A",
+                explanation: "警告标线是提醒道路使用者注意特殊情况的标线。"
+            },
+            {
+                id: 114,
+                type: "single",
+                question: "道路辅助标志的形状与颜色分别为（ ）。",
+                options: ["A: 矩形；白底、黑字、黑边框、白色衬边", "B: 正等边三角形；黄底、黑边框、黑图案", "C: 圆形；白底、红圈、红杠、黑图形", "D: 矩形；蓝底、白图形"],
+                correctAnswer: "A",
+                explanation: "辅助标志为矩形，白底黑字黑边框。"
+            },
+            {
+                id: 115,
+                type: "single",
+                question: "在现场急救中，判断伤员有无意识的方法是（ ）。",
+                options: ["A: 双手轻拍伤病员肩部，并在其耳边大声呼唤", "B: 双手拍打伤员脸部", "C: 摇晃伤病员身体", "D: 拍打脸部的同时，高声呼唤"],
+                correctAnswer: "A",
+                explanation: "判断意识应轻拍肩部并在耳边呼唤。"
+            },
+            {
+                id: 116,
+                type: "single",
+                question: "下列场所中，（ ）不属于公共场所。",
+                options: ["A: 机场", "B: 码头", "C: 工厂", "D: 商场"],
+                correctAnswer: "C",
+                explanation: "工厂不属于公共场所。"
+            },
+            {
+                id: 117,
+                type: "single",
+                question: "申领《保安员证》应具备的基本条件之一是（ ）。",
+                options: ["A: 高中以上文化", "B: 品行良好", "C: 遵纪守法", "D: 品学兼优"],
+                correctAnswer: "B",
+                explanation: "申领保安员证要求品行良好。"
+            },
+            {
+                id: 118,
+                type: "single",
+                question: "甲和乙发生争执，乙生气离去，过了一会儿，甲看见乙气势汹汹地拿着菜刀跑来，认为乙要砍自己，就拿起砖头朝乙头上砸去，致乙死亡。甲的这种行为属于（ ）。",
+                options: ["A: 紧急避险", "B: 自救行为", "C: 正当防卫", "D: 犯罪行为"],
+                correctAnswer: "D",
+                explanation: "乙尚未实施不法侵害，甲的行为不属于正当防卫，构成故意伤害罪。"
+            },
+            {
+                id: 119,
+                type: "single",
+                question: "根据《保安服务管理条例》规定，取得《保安员证》的身体条件是（ ）。",
+                options: ["A: 身高必须达到1.65米以上", "B: 达到国家规定的体能标准", "C: 身体健康", "D: 眼睛不能近视"],
+                correctAnswer: "C",
+                explanation: "取得保安员证要求身体健康。"
+            },
+            {
+                id: 120,
+                type: "single",
+                question: "发生在影剧院、体育场(馆)、集贸市场的群体闹事，属于在（ ）发生的群体性治安事件。",
+                options: ["A: 企业单位内部", "B: 公共场所", "C: 事业单位内部", "D: 机关单位"],
+                correctAnswer: "B",
+                explanation: "影剧院、体育场等属于公共场所。"
+            },
+            {
+                id: 121,
+                type: "single",
+                question: "关于保安员履行查验与登记的职责，下列说法错误的是（ ）。",
+                options: ["A: 保安员可以查验出入人员证件", "B: 保安员可以对出入服务区域的车辆进行登记", "C: 保安员不能查验本单位人员的证件", "D: 必要时，保安员可以登记单位内部车辆的出入情况"],
+                correctAnswer: "C",
+                explanation: "保安员可以查验本单位人员的证件。"
+            },
+            {
+                id: 122,
+                type: "single",
+                question: "下列不属于保安员职责任务的是（ ）。",
+                options: ["A: 查验出入人员的证件", "B: 开展守护、巡逻活动", "C: 在公共场所独立开展安全检查", "D: 制止违法犯罪行为"],
+                correctAnswer: "C",
+                explanation: "在公共场所独立开展安全检查不属于保安员职责任务。"
+            },
+            {
+                id: 123,
+                type: "single",
+                question: "在保安服务工作中，（ ）是指对现象进行分析，从中发现不合常理、违背规律、相互矛盾的地方。",
+                options: ["A: 眼勤", "B: 脚勤", "C: 手勤", "D: 腿勤"],
+                correctAnswer: "A",
+                explanation: "眼勤指仔细观察分析。"
+            },
+            {
+                id: 124,
+                type: "single",
+                question: "某市公安机关在侦破案件过程中，错将张三刑事拘留了五天，该市公安机关发现错误后立即将张三释放，并给予其一定的经济赔偿。张三获得的赔偿属于（ ）的实现。",
+                options: ["A: 社会经济权利", "B: 政治自由权利", "C: 人身自由权利", "D: 国家赔偿权利"],
+                correctAnswer: "D",
+                explanation: "国家错误拘留的赔偿属于国家赔偿。"
+            },
+            {
+                id: 125,
+                type: "single",
+                question: "保安员小张和小李在巡逻时，接到小区一位居民的反映，称其隔壁邻居家门户敞开，家中无人，物品凌乱。小张和小李赶到现场后，首先应当做的是（ ）。",
+                options: ["A: 先锁门，再报警", "B: 先看损失大小，再决定是否报警", "C: 先通知失主回家清点物品，再看损失大小决定是否报警", "D: 保护现场并且报警"],
+                correctAnswer: "D",
+                explanation: "发现可疑情况应保护现场并报警。"
+            },
+            {
+                id: 126,
+                type: "single",
+                question: "关于保安员履行查验与登记的职责，下列说法错误的是（ ）。",
+                options: ["A: 保安员可以查验出入人员证件", "B: 保安员可以对出入服务区域的车辆进行登记", "C: 保安员不能查验本单位人员的证件", "D: 必要时，保安员可以登记单位内部车辆的出入情况"],
+                correctAnswer: "C",
+                explanation: "保安员可以查验本单位人员证件。"
+            },
+            {
+                id: 127,
+                type: "single",
+                question: "根据《保安服务管理条例》规定，从事保安服务工作必须（ ）。",
+                options: ["A: 取得保安培训单位的合格证", "B: 取得高中毕业证书", "C: 取得《保安员证》", "D: 取得初中毕业证书"],
+                correctAnswer: "C",
+                explanation: "从事保安工作必须取得保安员证。"
+            },
+            {
+                id: 128,
+                type: "single",
+                question: "根据《保安服务管理条例》规定，《保安员证》由（ ）负责审批。",
+                options: ["A: 设区的市级人民政府公安机关", "B: 县级人民政府公安机关", "C: 省级人民政府公安机关", "D: 公安派出所"],
+                correctAnswer: "A",
+                explanation: "保安员证由设区的市级公安机关审批。"
+            },
+            {
+                id: 129,
+                type: "single",
+                question: "保安员的服务内容主要包括（ ）。",
+                options: ["A: 在从业单位为公民、法人和其他社会组织提供安全防范服务", "B: 在从业单位为公民、法人和其他社会组织提供治安管理服务", "C: 保安员以私人名义为公民、法人和其他社会组织提供安全管理服务", "D: 保安员以私人名义为公民、法人和其他社会组织提供各种安全服务"],
+                correctAnswer: "A",
+                explanation: "保安员在从业单位提供安全防范服务。"
+            },
+            {
+                id: 130,
+                type: "single",
+                question: "关于保安员服务内容，下列说法正确的是（ ）。",
+                options: ["A: 提供人身、财产、信息等安全防范服务", "B: 提供人身、财产、信息等治安防范服务", "C: 提供人身、财产、社会治安秩序等安全防范服务", "D: 提供人身保护、财产保障、信息安全等方面的服务"],
+                correctAnswer: "A",
+                explanation: "保安员提供人身、财产、信息安全防范服务。"
+            },
+            {
+                id: 131,
+                type: "single",
+                question: "关于保安员的职责，下列说法正确的是（ ）。",
+                options: ["A: 保安员是治安服务的主要力量", "B: 保安员是治安服务的重要力量", "C: 保安员是安全管理的重要力量", "D: 保安员是保安服务的主要力量"],
+                correctAnswer: "D",
+                explanation: "保安员是保安服务的主要力量。"
+            },
+            {
+                id: 132,
+                type: "single",
+                question: "以下叙述中，（ ）不是保安员应享有的权利。",
+                options: ["A: 实施交通管制", "B: 签订劳动合同", "C: 接受表彰奖励", "D: 享受劳动保护"],
+                correctAnswer: "A",
+                explanation: "保安员没有实施交通管制的权利。"
+            },
+            {
+                id: 133,
+                type: "single",
+                question: "单位制定的内部治安保卫制度不包括单位内部的（ ）。",
+                options: ["A: 治安防范教育培训制度", "B: 消防安全管理制度", "C: 交通安全管理制度", "D: 科研成果管理制度"],
+                correctAnswer: "D",
+                explanation: "科研成果管理制度不属于治安保卫制度。"
+            },
+            {
+                id: 134,
+                type: "single",
+                question: "对于因不满16周岁不予刑事处罚的行为人，应责令其家长或监护人加以管教，必要时也可以由政府（ ）。",
+                options: ["A: 强制教育", "B: 收容教养", "C: 劳动教养", "D: 监视居住"],
+                correctAnswer: "B",
+                explanation: "不满16周岁不予刑事处罚的，必要时可由政府收容教养。"
+            },
+            {
+                id: 135,
+                type: "single",
+                question: "保安员王某，想获得保安员国家职业资格二级证书，那么，他必须通过（ ）。",
+                options: ["A: 高级保安员职业能力考试与技能鉴定", "B: 中级保安员职业能力考试与技能鉴定", "C: 保安师职业能力考试与技能鉴定", "D: 高级保安师职业能力考试与技能鉴定"],
+                correctAnswer: "C",
+                explanation: "保安员国家职业资格二级是保安师。"
+            },
+            {
+                id: 136,
+                type: "single",
+                question: "某市私营保安服务公司客户经理甲负责按月到客户单位收取保安服务费。某日，甲从客户单位收到保安服务费6万元。甲回到保安服务公司后，将其中3万元交给公司财务入账，其余的3万元据为己有。甲的这种行为属于（ ）。",
+                options: ["A: 贪污行为", "B: 诈骗行为", "C: 职务侵占行为", "D: 侵占行为"],
+                correctAnswer: "C",
+                explanation: "利用职务便利将本单位财物非法占为己有属于职务侵占。"
+            },
+            {
+                id: 137,
+                type: "single",
+                question: "甲在互联网上认识了多名网友，并向网友吹嘘自己是国家某部委年轻的处长，能够帮助网友解决工作。通过这种方式甲先后骗取多名网友现金5万余元。甲某的这种行为属于（ ）。",
+                options: ["A: 职务侵占", "B: 招摇撞骗行为", "C: 侵占行为", "D: 盗窃行为"],
+                correctAnswer: "B",
+                explanation: "冒充国家机关工作人员骗取钱财属于招摇撞骗。"
+            },
+            {
+                id: 138,
+                type: "single",
+                question: "2009年1月1日，泰国首都曼谷一家夜总会在新年午夜时发生火灾，造成至少62人死亡、200多人受伤。按照我国火灾等级划分方法，这起火灾属于（ ）。",
+                options: ["A: 特别重大火灾", "B: 重大火灾", "C: 较大火灾", "D: 一般火灾"],
+                correctAnswer: "A",
+                explanation: "死亡30人以上为特别重大火灾。"
+            },
+            {
+                id: 139,
+                type: "single",
+                question: "在现场急救中，为了达到有效的人工呼吸，正确吹气的方法是（ ）。",
+                options: ["A: 多吹一些气，吹气时间延长一些", "B: 缓慢、持续吹入气体", "C: 深吸一口气再快速吹气", "D: 不捏鼻翼，快速吹气"],
+                correctAnswer: "B",
+                explanation: "人工呼吸应缓慢、持续吹气。"
+            },
+            {
+                id: 140,
+                type: "single",
+                question: "影剧院里发生火灾后，应该选择的逃生路线是（ ）。",
+                options: ["A: 按照人流方向选择安全出口逃生，选择疏散楼梯间撤离", "B: 按照应急指示指引的方向逃生，选择人流量较小的疏散通道撤离", "C: 按照人流方向选择安全出口逃生，选择消防电梯撤离", "D: 按照应急指示指引的方向逃生，选择人流量较大的疏散通道撤离"],
+                correctAnswer: "B",
+                explanation: "应按应急指示选择人流量较小的通道撤离。"
+            },
+            {
+                id: 141,
+                type: "single",
+                question: "遇到有外伤的伤员，救护员首先应检查（ ）。",
+                options: ["A: 有无大出血", "B: 皮肤有无擦伤", "C: 有无骨折", "D: 有无关节扭伤"],
+                correctAnswer: "A",
+                explanation: "外伤救护首先检查有无危及生命的大出血。"
+            },
+            {
+                id: 142,
+                type: "single",
+                question: "实施加压包扎止血时，敷料的大小应该（ ）。",
+                options: ["A: 与伤口大小相同", "B: 超过伤口周边3厘米", "C: 比伤口周边小", "D: 超过伤口周边1厘米"],
+                correctAnswer: "B",
+                explanation: "加压包扎敷料应超过伤口周边3厘米。"
+            },
+            {
+                id: 143,
+                type: "single",
+                question: "对于自招保安员单位的保安员来说，最基本的义务是（ ）。",
+                options: ["A: 遵守本单位的规章制度和工作纪律", "B: 开展安全检查和报警监控活动", "C: 听从本单位领导的指挥", "D: 遵守客户单位的规章制度"],
+                correctAnswer: "A",
+                explanation: "自招保安员应遵守本单位规章制度。"
+            },
+            {
+                id: 144,
+                type: "single",
+                question: "根据《保安服务管理条例》的规定，下列说法错误的是（ ）。",
+                options: ["A: 保安从业单位和保安员不得以任何理由参与追索债务", "B: 经由当事人授权后保安员可以参与追索债务", "C: 保安员不得以任何方式追索债务", "D: 由当事人依法通过协商或人民法院调解、裁判解决的债务保安员也不能参与追索"],
+                correctAnswer: "B",
+                explanation: "保安员不得以任何方式参与追索债务。"
+            },
+            {
+                id: 145,
+                type: "single",
+                question: "保安员陈某在执行一次随身护卫的工作中，护卫对象遭遇滋扰，这时他可以（ ）。",
+                options: ["A: 立即控制和扭送滋扰分子", "B: 立即扣押滋扰分子", "C: 将护卫对象转移到安全地带", "D: 立即检查滋扰分子的身份证"],
+                correctAnswer: "C",
+                explanation: "首要任务是将护卫对象转移到安全地带。"
+            },
+            {
+                id: 146,
+                type: "single",
+                question: "武装押运所使用的武器装备是（ ）。",
+                options: ["A: 防暴枪", "B: 电击警棍", "C: 强光电击器", "D: 保安棍"],
+                correctAnswer: "A",
+                explanation: "武装押运使用防暴枪。"
+            },
+            {
+                id: 147,
+                type: "single",
+                question: "当某单位的风险等级高而防护级别低时，说明该单位的安全防护水平（ ）。",
+                options: ["A: 高", "B: 中", "C: 低", "D: 不明"],
+                correctAnswer: "C",
+                explanation: "风险高防护低说明安全防护水平低。"
+            },
+            {
+                id: 148,
+                type: "single",
+                question: "当博物馆内夜间有小动物出没时，报警系统报警是属于（ ）现象。",
+                options: ["A: 误报警", "B: 漏报警", "C: 正常报警", "D: 故障报警"],
+                correctAnswer: "A",
+                explanation: "小动物触发报警属于误报警。"
+            },
+            {
+                id: 149,
+                type: "single",
+                question: "在岸上救护溺水者的正确步骤为（ ）。",
+                options: ["A: 打开气道，检查呼吸-->清除口鼻异物-->无呼吸、心跳，做心肺复苏-->成功后用干毛巾擦遍全身，保暖", "B: 清除口鼻异物-->打开气道，检查呼吸-->无呼吸、心跳，做心肺复苏-->成功后用干毛巾擦遍全身，保暖", "C: 用干毛巾擦遍全身，保暖-->打开气道，检查呼吸-->清除口鼻异物-->无呼吸、心跳，做心肺复苏", "D: 打开气道，检查呼吸-->做心肺复苏-->清除口鼻异物-->用干毛巾擦遍全身，保暖"],
+                correctAnswer: "B",
+                explanation: "应先清除口鼻异物，再打开气道检查呼吸。"
+            },
+            {
+                id: 150,
+                type: "single",
+                question: "构成道路交通活动的四大因素是人、（ ）、道路和交通环境。",
+                options: ["A: 飞机", "B: 轮船", "C: 车辆", "D: 火车"],
+                correctAnswer: "C",
+                explanation: "道路交通四要素：人、车、路、环境。"
+            },
+            {
+                id: 151,
+                type: "single",
+                question: "在道路交通活动的四大因素中，道路交通的必要条件是（ ）。",
+                options: ["A: 人", "B: 车", "C: 道路", "D: 交通环境"],
+                correctAnswer: "D",
+                explanation: "交通环境是道路交通的必要条件。"
+            },
+            {
+                id: 152,
+                type: "single",
+                question: "下列交通方式中，属于道路交通活动的是（ ）。",
+                options: ["A: 乘飞机", "B: 坐火车", "C: 乘地铁", "D: 搭公交车"],
+                correctAnswer: "D",
+                explanation: "搭公交车属于道路交通活动。"
+            },
+            {
+                id: 153,
+                type: "single",
+                question: "下列设备属于消防报警系统的前端设备是（ ）。",
+                options: ["A: 主动红外探测器", "B: 微波探测器", "C: 烟感式火灾探测器", "D: 泄露电缆探测器"],
+                correctAnswer: "C",
+                explanation: "烟感探测器是消防报警系统前端设备。"
+            },
+            {
+                id: 154,
+                type: "single",
+                question: "下列设备属于消防报警系统的消防控制设备是（ ）。",
+                options: ["A: 防排烟及空调通风控制器", "B: 云台镜头控制器", "C: 视频矩阵控制器", "D: 门禁控制器"],
+                correctAnswer: "A",
+                explanation: "防排烟控制器是消防控制设备。"
+            },
+            {
+                id: 155,
+                type: "single",
+                question: "下列设备属于楼宇对讲系统的设备是（ ）。",
+                options: ["A: 可视电话", "B: 直按式对讲分机", "C: 无线电话", "D: 有线电话"],
+                correctAnswer: "B",
+                explanation: "直按式对讲分机是楼宇对讲系统设备。"
+            },
+            {
+                id: 156,
+                type: "single",
+                question: "下列设备可作为出入口控制系统的前端设备是（ ）。",
+                options: ["A: 指纹仪", "B: 摄像机", "C: 报警器", "D: 挡车器"],
+                correctAnswer: "A",
+                explanation: "指纹仪是出入口控制系统前端设备。"
+            },
+            {
+                id: 157,
+                type: "single",
+                question: "保安员王某和张某在城市中心广场巡逻时，接到一名群众举报附近有人行窃，保安员首先应该（ ）。",
+                options: ["A: 认真听取并做好记录", "B: 告知举报群众直接报警", "C: 立即前往查明情况", "D: 下班后报告服务单位"],
+                correctAnswer: "A",
+                explanation: "首先应认真听取举报并记录。"
+            },
+            {
+                id: 158,
+                type: "single",
+                question: "下列设备属于消防报警系统的消防控制设备是（ ）。",
+                options: ["A: 门禁控制器", "B: 云台镜头控制器", "C: 视频矩阵控制器", "D: 自动灭火系统控制装备"],
+                correctAnswer: "D",
+                explanation: "自动灭火系统控制装备是消防控制设备。"
+            },
+            {
+                id: 159,
+                type: "single",
+                question: "使用手轮式二氧化碳灭火器时，先去掉铅封，然后（ ）手轮，即喷出二氧化碳气体。",
+                options: ["A: 逆时针方向旋转", "B: 顺时针方向旋转", "C: 拔出", "D: 按下"],
+                correctAnswer: "A",
+                explanation: "手轮式二氧化碳灭火器逆时针旋转手轮。"
+            },
+            {
+                id: 160,
+                type: "single",
+                question: "对于一个建筑物来讲，（ ）处在消防中枢位置，具有重要的防火、灭火作用。",
+                options: ["A: 消防控制室", "B: 门卫室", "C: 保安值班室", "D: 办公室"],
+                correctAnswer: "A",
+                explanation: "消防控制室是建筑物消防中枢。"
+            },
+            {
+                id: 161,
+                type: "single",
+                question: "在火灾发生时，错误的自救方法是（ ）。",
+                options: ["A: 可先进入避难层或由疏散楼梯撤到安全地点", "B: 如果楼层已着火燃烧，但楼梯尚未烧断，火势并不十分猛烈时，可披上用水浸湿的衣被，从楼上快速冲下", "C: 建筑物六层发生火灾时，如楼梯已经烧断，被困人员可利用房屋的阳台、落水管或竹竿等逃生", "D: 多层建筑火灾，如生命受到严重威胁，又无其它自救办法时，可用绳子或床单作为逃生工具"],
+                correctAnswer: "C",
+                explanation: "六层高度较高，从阳台、落水管逃生危险，不是正确的自救方法。"
+            },
+            {
+                id: 162,
+                type: "single",
+                question: "现场证人在反映情况时，保安员应重点登记现场证人的（ ）。",
+                options: ["A: 体貌特征", "B: 说话口音", "C: 姓名、住址或单位", "D: 籍贯"],
+                correctAnswer: "C",
+                explanation: "应重点登记证人的姓名、住址或单位。"
+            },
+            {
+                id: 163,
+                type: "single",
+                question: "道路是交通活动的（ ）。",
+                options: ["A: 主体", "B: 客体", "C: 工具", "D: 基础"],
+                correctAnswer: "D",
+                explanation: "道路是交通活动的基础。"
+            },
+            {
+                id: 164,
+                type: "single",
+                question: "道路交通是指人们或者人们借助某种运载工具，以（ ）为活动场所，实现空间位置移动的过程。",
+                options: ["A: 公路", "B: 铁路", "C: 广场", "D: 道路"],
+                correctAnswer: "D",
+                explanation: "道路交通以道路为活动场所。"
+            },
+            {
+                id: 165,
+                type: "single",
+                question: "我们日常生活和生产中通常使用两种电压，一种是动力用电，其电压为（ ）；另一种为照明和家用电器用电，其电压为（ ）。",
+                options: ["A: 220伏；380伏", "B: 380伏；220伏", "C: 220伏；110伏", "D: 480伏；220伏"],
+                correctAnswer: "B",
+                explanation: "动力用电380伏，照明用电220伏。"
+            },
+            {
+                id: 166,
+                type: "single",
+                question: "某贵重物品库夜间发生物品丢失，没有报警，但经检查发现报警系统能正常工作，这种现象属于（ ）。",
+                options: ["A: 误报警", "B: 漏报警", "C: 正常报警", "D: 故障报警"],
+                correctAnswer: "B",
+                explanation: "该报警时未报警属于漏报警。"
+            },
+            {
+                id: 167,
+                type: "single",
+                question: "道路交通中设置的安全岛的作用是（ ）。",
+                options: ["A: 供过街行人避让车辆", "B: 供非机动车临时停放", "C: 供机动车临时停放", "D: 供交通警察指挥交通"],
+                correctAnswer: "A",
+                explanation: "安全岛供行人过街时避让车辆。"
+            },
+            {
+                id: 168,
+                type: "single",
+                question: "保安员在出入口值勤遇有外来人员携带可疑危险物品时，正确的做法是（ ）。",
+                options: ["A: 严格检查携带的可疑物品", "B: 向客户单位报告，按要求处理", "C: 代为保管可疑物品，允许人员进入", "D: 扣押可疑物品，严禁人员进入"],
+                correctAnswer: "B",
+                explanation: "应报告客户单位按指示处理。"
+            },
+            {
+                id: 169,
+                type: "single",
+                question: "根据大型群众性活动法律法规的规定，不属于大型群众性活动承办者安全责任的是（ ）。",
+                options: ["A: 落实安全责任制度", "B: 处置危害公共安全的突发事件", "C: 进行安全检查", "D: 开展安全教育"],
+                correctAnswer: "B",
+                explanation: "处置突发事件是公安机关的职责。"
+            },
+            {
+                id: 170,
+                type: "single",
+                question: "2005年，《国际心肺复苏指南》建议，实施胸外心脏按压时，每（ ）个循环更换一个按压者。",
+                options: ["A: 2", "B: 5", "C: 10", "D: 15"],
+                correctAnswer: "B",
+                explanation: "每5个循环（约2分钟）更换按压者。"
+            },
+            {
+                id: 171,
+                type: "single",
+                question: "保安员张某在小区内巡逻，突然发现有人晕倒，这时，他首先应该（ ）。",
+                options: ["A: 赶快为病人做心肺复苏", "B: 立即高声呼救，寻求帮助", "C: 可以悄悄走开", "D: 返回办公室，请示领导，再做决定"],
+                correctAnswer: "B",
+                explanation: "发现病人应先呼救寻求帮助。"
+            },
+            {
+                id: 172,
+                type: "single",
+                question: "某保安服务公司的保安员马某系回族，信仰伊斯兰教。马某信教的权利和自由属于（ ）赋予的。",
+                options: ["A: 宪法", "B: 民族区域自治法", "C: 宗教法", "D: 民族法"],
+                correctAnswer: "A",
+                explanation: "宗教信仰自由是宪法赋予的权利。"
+            },
+            {
+                id: 173,
+                type: "single",
+                question: "建筑物消防安全疏散设施不包括（ ）。",
+                options: ["A: 安全出口", "B: 疏散指示标志", "C: 应急广播", "D: 普通电梯"],
+                correctAnswer: "D",
+                explanation: "普通电梯不是消防安全疏散设施。"
+            },
+            {
+                id: 174,
+                type: "single",
+                question: "建筑物消防安全疏散设施不包括（ ）。",
+                options: ["A: 疏散楼梯", "B: 疏散通道", "C: 阳台", "D: 普通电梯"],
+                correctAnswer: "D",
+                explanation: "普通电梯不是消防安全疏散设施。"
+            },
+            {
+                id: 175,
+                type: "single",
+                question: "某保安服务公司的保安员甲利用在客户单位值班的便利条件，经常在夜间值班期间盗用客户单位的固定电话拨打长途电话，一个月内造成客户单位电话费多支出3000余元。甲的这种行为属于（ ）。",
+                options: ["A: 诈骗行为", "B: 贪污行为", "C: 盗窃行为", "D: 职务侵占行为"],
+                correctAnswer: "C",
+                explanation: "盗打电话属于盗窃行为。"
+            },
+            {
+                id: 176,
+                type: "single",
+                question: "我国刑事诉讼的目的是惩罚犯罪、（ ）。",
+                options: ["A: 打击犯罪", "B: 保障人权", "C: 保护群众", "D: 制止犯罪"],
+                correctAnswer: "B",
+                explanation: "刑事诉讼目的：惩罚犯罪，保障人权。"
+            },
+            {
+                id: 177,
+                type: "single",
+                question: "在道路交通活动中，车是道路交通活动的（ ）。",
+                options: ["A: 主体", "B: 工具", "C: 客体", "D: 载体"],
+                correctAnswer: "B",
+                explanation: "车是道路交通活动的工具。"
+            },
+            {
+                id: 178,
+                type: "single",
+                question: "（ ）不属于道路交通活动中的车。",
+                options: ["A: 机动车", "B: 非机动车", "C: 火车", "D: 无轨电车"],
+                correctAnswer: "C",
+                explanation: "火车不属于道路交通活动中的车。"
+            },
+            {
+                id: 179,
+                type: "single",
+                question: "手指出血，为达到止血作用，应该压住（ ）。",
+                options: ["A: 出血手指的尖端", "B: 出血手指根部前后两侧", "C: 出血手指根部左右两侧", "D: 腕部的桡动脉、尺动脉"],
+                correctAnswer: "C",
+                explanation: "手指出血压住手指根部左右两侧。"
+            },
+            {
+                id: 180,
+                type: "single",
+                question: "下列选项中对干粉灭火器使用方法叙述错误的是（ ）。",
+                options: ["A: 干粉灭火器最常用的开启方法为压把法", "B: 开启干粉灭火棒时，左手握住其中部，将喷嘴对准火焰根部，右手拔掉保险卡，旋转开启旋钮，打开贮气瓶", "C: 将灭火器提到距火源适当位置，应先上下颠倒几次，使筒内的干粉松动", "D: 手提筒体上部的提环，将筒体颠倒过来，一只手握紧提环，另一只手握住筒体的底圈"],
+                correctAnswer: "D",
+                explanation: "干粉灭火器不应颠倒使用。"
+            },
+            {
+                id: 181,
+                type: "single",
+                question: "下列不属于室内消火栓组成结构的消防设施是（ ）。",
+                options: ["A: 火灾报警系统", "B: 消防水池", "C: 消防给水设施", "D: 消火栓箱"],
+                correctAnswer: "A",
+                explanation: "火灾报警系统不属于室内消火栓组成部分。"
+            },
+            {
+                id: 182,
+                type: "single",
+                question: "根据《保安服务管理条例》规定，（ ）不属于保安员的权利。",
+                options: ["A: 享受劳动保护", "B: 接受表彰奖励", "C: 履行服务合同", "D: 享受社会保险"],
+                correctAnswer: "C",
+                explanation: "履行服务合同是义务，不是权利。"
+            },
+            {
+                id: 183,
+                type: "single",
+                question: "在道路交通活动中，人作为交通参与者，是道路交通活动的（ ）。",
+                options: ["A: 主体", "B: 载体", "C: 工具", "D: 客体"],
+                correctAnswer: "A",
+                explanation: "人是道路交通活动的主体。"
+            },
+            {
+                id: 184,
+                type: "single",
+                question: "构成道路交通活动的四大因素是（ ）、车、道路和交通环境。",
+                options: ["A: 交通民警", "B: 筑路工人", "C: 护路人员", "D: 人"],
+                correctAnswer: "D",
+                explanation: "道路交通四要素：人、车、路、环境。"
+            },
+            {
+                id: 185,
+                type: "single",
+                question: "在道路交通活动的四大因素中，人、车的载体和交通的基础是（ ）。",
+                options: ["A: 交通工具", "B: 交通设施", "C: 道路", "D: 交通标志"],
+                correctAnswer: "C",
+                explanation: "道路是人、车的载体和交通的基础。"
+            },
+            {
+                id: 186,
+                type: "single",
+                question: "一般情况下，非机动车信号红灯亮时，在不影响其他车辆和行人的情况下，（ ）的非机动车可以继续通行。",
+                options: ["A: 丁字路口转弯", "B: 右转弯", "C: 左转弯", "D: 直行"],
+                correctAnswer: "B",
+                explanation: "红灯亮时右转弯的非机动车可以通行。"
+            },
+            {
+                id: 187,
+                type: "single",
+                question: "保安员在执行勤务时，要加强戒备，在（ ）方面保持适宜的戒备状态。",
+                options: ["A: 思想和身体", "B: 思想和心理", "C: 心理和行动", "D: 身体和行动"],
+                correctAnswer: "A",
+                explanation: "应在思想和身体方面保持戒备。"
+            },
+            {
+                id: 188,
+                type: "single",
+                question: "保安勤务现场的基本控制手段一般有（ ）。",
+                options: ["A: 语言控制和近身控制", "B: 语言控制和心理控制", "C: 心理控制和行动控制", "D: 行动控制和近身控制"],
+                correctAnswer: "A",
+                explanation: "保安勤务基本控制手段：语言控制和近身控制。"
+            },
+            {
+                id: 189,
+                type: "single",
+                question: "警告标志的作用是警告（ ）。",
+                options: ["A: 车辆、行人注意危险地点", "B: 车辆、行人不准通行", "C: 驾驶人前面有弯路", "D: 驾驶人前面容易拥堵"],
+                correctAnswer: "A",
+                explanation: "警告标志作用是提醒注意危险地点。"
+            },
+            {
+                id: 190,
+                type: "single",
+                question: "我国常用的最高安全电压为（ ），超过此电压就容易对人体造成电击或电伤。",
+                options: ["A: 220伏", "B: 110伏", "C: 36伏", "D: 18伏"],
+                correctAnswer: "C",
+                explanation: "36伏是常用最高安全电压。"
+            },
+            {
+                id: 191,
+                type: "single",
+                question: "在现场急救中，为了使胸外按压更加有效，正确的方法是（ ）。",
+                options: ["A: 按压时间长一些，能压出更多的血", "B: 按压和解除按压时间相等", "C: 按压后，多放松一段时间，使心脏更好的充盈", "D: 压5次，休息1分钟后，再压5次，反复操作不间断"],
+                correctAnswer: "B",
+                explanation: "按压和解除按压时间应相等。"
+            },
+            {
+                id: 192,
+                type: "single",
+                question: "如果在某单位的重要守护区域附近发生紧急情况，保安员以下（ ）的行为是错误的。",
+                options: ["A: 若是来人报称，应积极协助来人报警", "B: 首先前去查看、救助，然后向领导报告", "C: 如果守护力量充足，先加强对目标的守护，经领导允许后，可在职责范围内处置", "D: 若是来电报称，应告知对方电话报警"],
+                correctAnswer: "B",
+                explanation: "应先向领导报告，不应首先前去查看。"
+            },
+            {
+                id: 193,
+                type: "single",
+                question: "根据《保安服务管理条例》规定，《保安员证》由（ ）负责审批。",
+                options: ["A: 设区的市级人民政府公安机关", "B: 县级人民政府公安机关", "C: 省级人民政府公安机关", "D: 公安派出所"],
+                correctAnswer: "A",
+                explanation: "保安员证由设区的市级公安机关审批。"
+            },
+            {
+                id: 194,
+                type: "single",
+                question: "张三在就餐时与李四发生纠纷，张三顺手拿起身边的座椅朝李四头部砸去，李四边躲边用另一座椅抵挡并导致张三受伤，李四的这种行为属于（ ）。",
+                options: ["A: 紧急避险", "B: 自救行为", "C: 正当防卫", "D: 犯罪行为"],
+                correctAnswer: "C",
+                explanation: "为制止正在进行的不法侵害而采取的行为属于正当防卫。"
+            },
+            {
+                id: 195,
+                type: "single",
+                question: "在保安服务工作中，当发生重大案件或事故时，应急处置的第一道程序是（ ）。",
+                options: ["A: 报告公安机关和单位领导", "B: 维护现场及周边秩序", "C: 向周围人员求援", "D: 紧急进入现场处置"],
+                correctAnswer: "A",
+                explanation: "发生重大案件应首先报告公安机关和单位领导。"
+            },
+            {
+                id: 196,
+                type: "single",
+                question: "下列不属于保安员职责任务的是（ ）。",
+                options: ["A: 登记出入车辆和物品", "B: 开展安全检查、报警监控活动", "C: 设隔离区域，隔离犯罪嫌疑人", "D: 维护公共场所秩序"],
+                correctAnswer: "C",
+                explanation: "隔离犯罪嫌疑人是公安机关的职责。"
+            },
+            {
+                id: 197,
+                type: "single",
+                question: "保安员孙某在执行人群控制工作中发现一疑似犯罪嫌疑人，应立即（ ）。",
+                options: ["A: 报告执勤民警", "B: 抓捕犯罪嫌疑人", "C: 扣押犯罪嫌疑人", "D: 搜查犯罪嫌疑人"],
+                correctAnswer: "A",
+                explanation: "发现犯罪嫌疑人应报告执勤民警。"
+            },
+            {
+                id: 198,
+                type: "single",
+                question: "风险分析是指在特定系统中进行（ ）、频率分析、后果分析的全过程。",
+                options: ["A: 资料调查", "B: 环境调查", "C: 资产辩识", "D: 危险辨识"],
+                correctAnswer: "D",
+                explanation: "风险分析包括危险辨识、频率分析、后果分析。"
+            },
+            {
+                id: 199,
+                type: "single",
+                question: "保安公司从事保安武装守护服务的对象和目标是（ ）单位。",
+                options: ["A: 通讯枢纽工程", "B: 高级商务楼", "C: 大型集贸市场", "D: 大型游船码头"],
+                correctAnswer: "A",
+                explanation: "通讯枢纽工程是武装守护服务对象。"
+            },
+            {
+                id: 200,
+                type: "single",
+                question: "保安员严某在客户单位进行夜间巡逻时，发现一陌生的醉酒人有跳楼的企图，就立即报警，因该醉酒人情绪激动，警察就将其带到公安派出所并用警绳将其绑在椅子上。警察用警绳将醉酒人绑在椅子上的行为是（ ）。",
+                options: ["A: 约束", "B: 拘留", "C: 扣押", "D: 管制"],
+                correctAnswer: "A",
+                explanation: "为防止醉酒人自伤或伤人而采取的限制措施属于约束。"
+            },
+            {
+                id: 201,
+                type: "single",
+                question: "在道路交通活动中，道路是人、车的（ ）。",
+                options: ["A: 载体", "B: 途径", "C: 通道", "D: 基础"],
+                correctAnswer: "A",
+                explanation: "道路是人、车的载体。"
+            },
+            {
+                id: 202,
+                type: "single",
+                question: "交通信号灯黄灯亮时，（ ）。",
+                options: ["A: 允许车辆通行", "B: 已越过停止线的车辆可以继续通行", "C: 允许车辆左转弯", "D: 车辆应当加速通过"],
+                correctAnswer: "B",
+                explanation: "黄灯亮时，已越过停止线的车辆可以继续通行。"
+            },
+            {
+                id: 203,
+                type: "single",
+                question: "指示车辆和行人行进的标志是（ ）。",
+                options: ["A: 指示标志", "B: 旅游区标志", "C: 指路标志", "D: 辅助标志"],
+                correctAnswer: "A",
+                explanation: "指示标志是指示车辆、行人行进的标志。"
+            },
+            {
+                id: 204,
+                type: "single",
+                question: "在现场急救中，救护员判断伤员有无呼吸时，应持续观察（ ）秒钟。",
+                options: ["A: 3", "B: 10", "C: 20", "D: 60"],
+                correctAnswer: "B",
+                explanation: "判断呼吸应观察10秒钟。"
+            },
+            {
+                id: 205,
+                type: "single",
+                question: "在现场急救中，给成人做心肺复苏时，5个循环约需要（ ）分钟。",
+                options: ["A: 1", "B: 2", "C: 3", "D: 4-5"],
+                correctAnswer: "B",
+                explanation: "5个循环约需要2分钟。"
+            },
+            {
+                id: 206,
+                type: "single",
+                question: "使用推车式二氧化碳灭火器时，一人快速取下喇叭筒并展开喷射软管后，握住喇叭筒根部的手柄，另一人（ ）。",
+                options: ["A: 拔掉保险卡，旋转开启旋钮", "B: 快速按顺时针方向旋动手轮，并开到最大位置", "C: 快速按逆时针方向旋动手轮，并开到最大位置", "D: 拔去保险销，压下压把"],
+                correctAnswer: "C",
+                explanation: "推车式二氧化碳灭火器逆时针旋动手轮。"
+            },
+            {
+                id: 207,
+                type: "single",
+                question: "消防控制室是建筑内消防设施系统的（ ）中心。",
+                options: ["A: 控制", "B: 接收", "C: 显示", "D: 报警"],
+                correctAnswer: "A",
+                explanation: "消防控制室是消防设施控制中心。"
+            },
+            {
+                id: 208,
+                type: "single",
+                question: "消防控制室应当不间断地（ ）各种消防设备，保持系统的正常运行。",
+                options: ["A: 操作", "B: 监测", "C: 检查", "D: 维修"],
+                correctAnswer: "B",
+                explanation: "消防控制室应不间断监测消防设备。"
+            },
+            {
+                id: 209,
+                type: "single",
+                question: "下列选项中不属于自动消防设施的是（ ）。",
+                options: ["A: 疏散指示标志灯", "B: 湿式喷淋", "C: 感烟探测器", "D: 电动防火门"],
+                correctAnswer: "A",
+                explanation: "疏散指示标志灯不属于自动消防设施。"
+            },
+            {
+                id: 210,
+                type: "single",
+                question: "身上一旦着火，切忌（ ）。",
+                options: ["A: 奔跑或用手拍打", "B: 立即脱掉衣服", "C: 往身上浇水", "D: 就地打滚"],
+                correctAnswer: "A",
+                explanation: "身上着火切忌奔跑或拍打，以免助长火势。"
+            },
+            {
+                id: 211,
+                type: "single",
+                question: "高层建筑物中部起火，疏散通道被火切断，保安员可以引导人员（ ）。",
+                options: ["A: 疏散到相对安全区域，等待消防队救援", "B: 清除障碍物后逃生", "C: 尝试从窗口往下跳", "D: 试图从火中冲出去"],
+                correctAnswer: "A",
+                explanation: "应疏散到安全区域等待救援。"
+            },
+            {
+                id: 212,
+                type: "single",
+                question: "安全技术防范系统是以预防损失和（ ）为目的的一项社会公共安全业务。",
+                options: ["A: 预防灾害", "B: 预防犯罪", "C: 预防失误", "D: 抓获罪犯"],
+                correctAnswer: "B",
+                explanation: "安全技术防范以预防损失和预防犯罪为目的。"
+            },
+            {
+                id: 213,
+                type: "single",
+                question: "防护级别是指为保障防护对象的安全所采取（ ）的水平。",
+                options: ["A: 技术设备", "B: 防范措施", "C: 物理设施", "D: 人力保安"],
+                correctAnswer: "B",
+                explanation: "防护级别是指防范措施的水平。"
+            },
+            {
+                id: 214,
+                type: "single",
+                question: "机动车在消防栓或者消防队(站)门前（ ）米以内的路段，不得停车。",
+                options: ["A: 30", "B: 20", "C: 10", "D: 5"],
+                correctAnswer: "A",
+                explanation: "消防栓或消防队门前30米内禁止停车。"
+            },
+            {
+                id: 215,
+                type: "single",
+                question: "某物业管理服务公司的保安员颜某，利用在物业小区监控室值班的机会，经常在夜间私自将监控探头对准业主窗口进行偷窥，颜某的行为属于（ ）的行为。",
+                options: ["A: 危害小区安全", "B: 妨害小区管理", "C: 泄露业主隐私", "D: 侵犯业主隐私"],
+                correctAnswer: "D",
+                explanation: "偷窥他人隐私属于侵犯隐私权行为。"
+            },
+            {
+                id: 216,
+                type: "single",
+                question: "我国现行国家标准将火灾分为A、B、C、D四类，下列属于A类火灾的是（ ）。",
+                options: ["A: 液体火灾和可熔化的固体物质火灾", "B: 固体火灾", "C: 气体火灾", "D: 金属火灾"],
+                correctAnswer: "B",
+                explanation: "A类火灾指固体物质火灾。"
+            },
+            {
+                id: 217,
+                type: "single",
+                question: "我国现行国家标准将火灾分为A、B、C、D四类，下列属于B类火灾的是（ ）。",
+                options: ["A: 木材、棉、毛、麻、纸张火灾等", "B: 钾、钠、镁、锂、铝镁合金火灾等", "C: 煤气、天然气、甲烷、乙烷、丙烷、氢气火灾等", "D: 汽油、煤油、柴油、原油、甲醇、乙醇、沥青、石蜡火灾等"],
+                correctAnswer: "D",
+                explanation: "B类火灾指液体或可熔化固体物质火灾。"
+            },
+            {
+                id: 218,
+                type: "single",
+                question: "消防专指（ ）。",
+                options: ["A: 火灾救援", "B: 预防和扑救火灾", "C: 消除火灾隐患和防止火灾发生", "D: 控制火灾蔓延和整改火灾隐患"],
+                correctAnswer: "B",
+                explanation: "消防指预防和扑救火灾。"
+            },
+            {
+                id: 219,
+                type: "single",
+                question: "下列对保安员防火巡查的内容叙述错误的是（ ）。",
+                options: ["A: 消防设施、器材和消防安全标志是否在位、完整", "B: 安全出口、疏散通道是否畅通，安全疏散指示标志、应急照明是否完好", "C: 常闭式防火门是否处于关闭状态，防火卷帘下是否堆放物品影响使用", "D: 有消防设施、器材的部位是否有人员在位"],
+                correctAnswer: "D",
+                explanation: "防火巡查不检查是否有人员在位。"
+            },
+            {
+                id: 220,
+                type: "single",
+                question: "安全技术防范是以（ ）和预防犯罪为目的的一项社会公共安全业务。",
+                options: ["A: 预防灾害", "B: 预防损失", "C: 预防失误", "D: 抓获罪犯"],
+                correctAnswer: "B",
+                explanation: "安全技术防范以预防损失和预防犯罪为目的。"
+            },
+            {
+                id: 221,
+                type: "single",
+                question: "对保安服务业来说安全技术防范系统就是利用（ ）为客户单位提供安全服务。",
+                options: ["A: 人力保安", "B: 物理设施", "C: 防范技术", "D: 安全管理"],
+                correctAnswer: "C",
+                explanation: "安全技术防范系统利用防范技术提供服务。"
+            },
+            {
+                id: 222,
+                type: "single",
+                question: "保安服务可以借助安全技术防范系统的（ ）作用，减少不法分子的入侵行为的发生。",
+                options: ["A: 侦查", "B: 打击", "C: 威慑", "D: 恐吓"],
+                correctAnswer: "C",
+                explanation: "技防系统具有威慑作用。"
+            },
+            {
+                id: 223,
+                type: "single",
+                question: "保安服务可以借助安全技术防范系统的（ ）能力，及时发现不法入侵。",
+                options: ["A: 冗余", "B: 反应", "C: 升级", "D: 节电"],
+                correctAnswer: "B",
+                explanation: "技防系统具有反应能力。"
+            },
+            {
+                id: 224,
+                type: "single",
+                question: "安全管理系统是指对入侵报警、视频安防监控、出入口控制等子系统进行组合或集成，实现对各子系统的（ ）、管理和监控的电子系统。",
+                options: ["A: 功能提升", "B: 系统测试", "C: 有效联动", "D: 系统叠加"],
+                correctAnswer: "C",
+                explanation: "安全管理系统实现各子系统有效联动。"
+            },
+            {
+                id: 225,
+                type: "single",
+                question: "保安押运公司为某银行护送款项，途中突然发生火灾，造成运钞车无法行进，下列做法错误的是（ ）。",
+                options: ["A: 拨打110报警", "B: 拨打119报警", "C: 拨打122报警", "D: 请警车帮助押款"],
+                correctAnswer: "D",
+                explanation: "押运途中发生火灾应报警并保护现场，不应请警车帮助押款。"
+            },
+            // 判断题 第226题-第315题
+            {
+                id: 226,
+                type: "truefalse",
+                question: "保安巡逻是指保安员对特定的目标进行巡视、检查的服务形式。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "保安巡逻是指保安员对特定区域、地段和目标进行巡视、检查、警戒的服务形式，不仅限于特定目标。"
+            },
+            {
+                id: 227,
+                type: "truefalse",
+                question: "保安员对特定地段进行巡视、检查服务是保安巡逻的服务形式之一。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "对特定地段进行巡视检查是保安巡逻的服务形式之一。"
+            },
+            {
+                id: 228,
+                type: "truefalse",
+                question: "保安员肖某在服务区域巡逻中，发现有人正在实施盗窃。肖某立即报警，同时将盗窃者抓获并送交给人民警察。肖某的这种行为不违法。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "保安员在执勤中发现违法犯罪行为，有权制止并将违法犯罪嫌疑人扭送公安机关，这是法律赋予的权利。"
+            },
+            {
+                id: 229,
+                type: "truefalse",
+                question: "现年56岁的刘某在某保安服务公司连续工作17年，现该保安服务公司因经营需要裁减人员，于是严格按照有关法律法规的程序解雇了包括刘某在内的一批保安员。该保安服务公司解雇刘某的行为是合法的。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "刘某在该公司连续工作17年，已符合签订无固定期限劳动合同的条件，公司因经营需要裁减人员时，应优先留用老员工。"
+            },
+            {
+                id: 230,
+                type: "truefalse",
+                question: "出入口守卫是客户服务区域安全的最后一道防线。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "出入口守卫是客户服务区域安全的第一道防线。"
+            },
+            {
+                id: 231,
+                type: "truefalse",
+                question: "逐个验证是保安员逐个查验从出入口通行的所有人员、车辆及物资的证件和凭证的行为。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "逐个验证是保安员的基本职责之一。"
+            },
+            {
+                id: 232,
+                type: "truefalse",
+                question: "保安员在出入口值勤遇有寻衅滋事情况时，需向客户单位报告，不应自行处置。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "保安员在确保安全的前提下，可先期处置寻衅滋事情况，同时报告客户单位。"
+            },
+            {
+                id: 233,
+                type: "truefalse",
+                question: "保安员在查验证件时，应与对方保持一定的安全距离。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "查验证件时应保持安全距离，以防突发情况。"
+            },
+            {
+                id: 234,
+                type: "truefalse",
+                question: "在来访人员登记中，一般由来访人员自己登记，保安员要对照来访人员证件核对登记内容。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "来访登记的一般流程。"
+            },
+            {
+                id: 235,
+                type: "truefalse",
+                question: "存在重大火灾隐患的单位，一定有违反消防法律法规行为。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "重大火灾隐患必然是违反消防法律法规的行为。"
+            },
+            {
+                id: 236,
+                type: "truefalse",
+                question: "机动车在通过没有交通信号灯控制也没有交通警察指挥的交叉路口时，向左转弯时，靠路口中心点的左侧转弯。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "这是道路交通安全法的规定。"
+            },
+            {
+                id: 237,
+                type: "truefalse",
+                question: "机动车行经弯道时，可以迅速超车。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "弯道禁止超车，以免发生危险。"
+            },
+            {
+                id: 238,
+                type: "truefalse",
+                question: "行车中遇行动缓慢的老人横过道路时，可持续鸣喇叭催促。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "遇老人横过道路应停车让行，不应鸣喇叭催促。"
+            },
+            {
+                id: 239,
+                type: "truefalse",
+                question: "在交通信号灯控制的交叉路口，相对方向行驶的左转弯机动车让右转弯机动车先行。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "右转弯机动车应让左转弯机动车先行。"
+            },
+            {
+                id: 240,
+                type: "truefalse",
+                question: "机动车通过没有信号灯控制的交叉路口时，应当减速慢行，并让行人和优先通行的车辆先行。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "这是道路交通安全法的规定。"
+            },
+            {
+                id: 241,
+                type: "truefalse",
+                question: "在交通信号灯控制的交叉路口，向右转弯的机动车遇有同车道前车正在等候放行信号时，应依次停车等候。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "这是交通规则的要求。"
+            },
+            {
+                id: 242,
+                type: "truefalse",
+                question: "在城市道路通行的行人，必要时可以跨越道路隔离设施通行。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "行人不得跨越道路隔离设施。"
+            },
+            {
+                id: 243,
+                type: "truefalse",
+                question: "在不影响其他车辆通行的情况下，清扫车可以逆向行驶。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "任何车辆都不能逆向行驶。"
+            },
+            {
+                id: 244,
+                type: "truefalse",
+                question: "在没有非机动车道的道路上，非机动车应当靠人行道的右侧通行。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "非机动车应靠车行道的右侧通行。"
+            },
+            {
+                id: 245,
+                type: "truefalse",
+                question: "在道路交通活动中，下车推行的自行车，应视为行人。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "下车推行的自行车视同行人。"
+            },
+            {
+                id: 246,
+                type: "truefalse",
+                question: "在不影响过往车辆通行的前提下，工程作业车的行驶路线和方向不受交通标志的限制。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "工程作业车作业时不受部分交通标志限制。"
+            },
+            {
+                id: 247,
+                type: "truefalse",
+                question: "免检放行是指对客户单位内部人员与车辆的进出无需检查直接放行。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "免检放行需经客户单位批准，不是对所有内部人员车辆都免检。"
+            },
+            {
+                id: 248,
+                type: "truefalse",
+                question: "保安员在对进入车辆进行登记时，请驾驶员出示证件即可放行。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "除查验证件外，还应登记车辆信息。"
+            },
+            {
+                id: 249,
+                type: "truefalse",
+                question: "出入口发生火灾等治安灾害事故，应及时报告客户单位，待客户单位同意后再报警。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "发生火灾应立即报警，同时报告客户单位。"
+            },
+            {
+                id: 250,
+                type: "truefalse",
+                question: "保安员在上岗值勤时可以着西服，佩戴保安标识，携带有关保安装备。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "保安员应着统一保安制服，不能着西服。"
+            },
+            {
+                id: 251,
+                type: "truefalse",
+                question: "现年22岁的保安员刘某，应聘到某市保安服务公司做保安员。该保安服务公司提供专项经费送刘某到中国保安行业协会举办的保安专业技能班学习。学习结束后，刘某以某省保安服务公司提供的薪酬高为由，提出解除劳动合同。某市保安服务公司要求刘某支付违约金。某市保安服务公司要求支付违约金的行为不合法。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "公司提供专项培训费用对员工进行培训，员工违反服务期约定应支付违约金。"
+            },
+            {
+                id: 252,
+                type: "truefalse",
+                question: "保安员刘某与其所在的保安服务公司因劳动报酬及劳动保险问题发生了争议，刘某在没有与该保安服务公司协商的情况下，可以到当地人民法院起诉。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "劳动报酬争议可以直接向法院起诉。"
+            },
+            {
+                id: 253,
+                type: "truefalse",
+                question: "保安员在治安案（事）件现场，可以协助公安机关进行现场处置。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "保安员有义务协助公安机关维护社会治安。"
+            },
+            {
+                id: 254,
+                type: "truefalse",
+                question: "枪支弹药可以存放在一个牢固的保险柜内。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "枪支弹药必须分开存放，枪弹分离。"
+            },
+            {
+                id: 255,
+                type: "truefalse",
+                question: "从事保安培训业务的专业师资人员必须具有大学本科以上学历。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "保安培训师资要求具有相关专业知识和实践经验，不一定是本科以上学历。"
+            },
+            {
+                id: 256,
+                type: "truefalse",
+                question: "公安机关对于不符合设立保安服务公司条件的申请，应当书面通知申请人并说明理由。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "这是行政许可法的要求。"
+            },
+            {
+                id: 257,
+                type: "truefalse",
+                question: "区域巡逻是指保安员按照保安公司的要求，对特定区域、地段和目标进行的巡视、检查、警戒活动。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "区域巡逻是按照服务单位的要求进行。"
+            },
+            {
+                id: 258,
+                type: "truefalse",
+                question: "保安员肖某在服务区域巡逻中捡拾到一个钱包，内有现金人民币2000元，因找不到失主而据为己有。肖某的这种行为不违法。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "捡拾他人财物据为己有属于不当得利，数额较大可能构成侵占罪。"
+            },
+            {
+                id: 259,
+                type: "truefalse",
+                question: "保安员在提供保安服务过程中，可以超越法律法规采取特殊行动。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "保安员必须在法律法规范围内履行职责。"
+            },
+            {
+                id: 260,
+                type: "truefalse",
+                question: "防护区是指不允许公众出入的、防护目标所在的区域或部位。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "防护区的定义。"
+            },
+            {
+                id: 261,
+                type: "truefalse",
+                question: "在交通信号灯控制的交叉路口，机动车应当在划有导向车道的路口按所需行进方向驶入导向车道。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "这是交通规则的要求。"
+            },
+            {
+                id: 262,
+                type: "truefalse",
+                question: "机动车是道路交通参与者中的强者，能否遵守道路通行法规，直接关系到道路交通的安全、有序和畅通。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "机动车对道路交通安全影响最大。"
+            },
+            {
+                id: 263,
+                type: "truefalse",
+                question: "在超车过程中，与对面来车预计有会车可能时，应提前加速超越。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "预计有会车可能时不得超车。"
+            },
+            {
+                id: 264,
+                type: "truefalse",
+                question: "安全管理系统也叫综合报警安全管理系统，它除提供报警信息服务外，还可以利用网络的信息资源提供其他综合服务。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "安全管理系统的功能。"
+            },
+            {
+                id: 265,
+                type: "truefalse",
+                question: "安全管理系统也叫综合报警安全管理系统，它只能提供报警信息服务，不能利用网络的信息资源提供其他综合服务。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "安全管理系统可以提供多种综合服务。"
+            },
+            {
+                id: 266,
+                type: "truefalse",
+                question: "防护级别是指存在于防护对象本身及其周围的、对其构成安全威胁的程度。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "这是风险等级的定义，不是防护级别。"
+            },
+            {
+                id: 267,
+                type: "truefalse",
+                question: "某客户单位领导让保安员小李去追索债务，小李因拒绝领导的要求而被辞退，该单位领导的做法侵犯了小李的劳动权。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "保安员不得参与追索债务，单位因此辞退员工侵犯劳动权。"
+            },
+            {
+                id: 268,
+                type: "truefalse",
+                question: "我国《娱乐场所管理条例》规定，所有娱乐场所必须配备安全检查设备，对进入娱乐场所的所有人员进行安全检查。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "不是所有娱乐场所都必须配备安检设备。"
+            },
+            {
+                id: 269,
+                type: "truefalse",
+                question: "紧急按钮不是入侵报警系统的前端设备。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "紧急按钮是入侵报警系统的前端设备。"
+            },
+            {
+                id: 270,
+                type: "truefalse",
+                question: "电子围栏是入侵报警系统的前端设备。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "电子围栏属于入侵报警系统前端设备。"
+            },
+            {
+                id: 271,
+                type: "truefalse",
+                question: "使用干粉灭火器扑救可燃、易燃液体火灾时，应对准火焰根部，由远及近，直至把火焰全部扑灭。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "干粉灭火器应对准火焰根部，由近及远扫射。"
+            },
+            {
+                id: 272,
+                type: "truefalse",
+                question: "在用人单位因为提供专项技术培训费用与劳动者约定的服务期满前，劳动者不得要求解除劳动合同。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "劳动者可以解除合同，但需支付违约金。"
+            },
+            {
+                id: 273,
+                type: "truefalse",
+                question: "预防和减少火灾发生的唯一途径，就是及时发现和消除火灾隐患，把火灾消灭在萌芽状态。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "及时消除火灾隐患是预防火灾的关键。"
+            },
+            {
+                id: 274,
+                type: "truefalse",
+                question: "在使用有喷射软管的贮压式灭火器时，一手应始终压下压把，不能放开，否则会中断喷射。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "使用灭火器时应持续压下压把。"
+            },
+            {
+                id: 275,
+                type: "truefalse",
+                question: "推车式灭火器不要设置在斜坡或基础不牢固的地点，防止出现滑动。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "推车式灭火器放置要平稳。"
+            },
+            {
+                id: 276,
+                type: "truefalse",
+                question: "从事保安培训业务的专业师资人员必须具有10年以上治安保卫管理工作经历。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "师资要求是5年以上治安保卫或保安管理工作经历。"
+            },
+            {
+                id: 277,
+                type: "truefalse",
+                question: "步巡一般不受气候、时间、地形、地物的限制和影响。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "步巡适应性强。"
+            },
+            {
+                id: 278,
+                type: "truefalse",
+                question: "区域巡逻是指保安员按照服务单位的要求，对特定区域、地段和目标进行的巡视、检查、警戒活动。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "区域巡逻的定义。"
+            },
+            {
+                id: 279,
+                type: "truefalse",
+                question: "保安员徒步巡逻可以单人进行。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "徒步巡逻一般应两人以上进行。"
+            },
+            {
+                id: 280,
+                type: "truefalse",
+                question: "由于区域巡逻需要保安员在巡逻区域内不断地巡视、检查，因此，区域巡逻具有流动性大的特点。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "区域巡逻的特点。"
+            },
+            {
+                id: 281,
+                type: "truefalse",
+                question: "盲区是指不允许未授权人员出入（或窥视）的防护区域或部位。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "这是禁区的定义。盲区是指防范系统未能覆盖的区域。"
+            },
+            {
+                id: 282,
+                type: "truefalse",
+                question: "火灾报警系统中，接收到火灾报警信号后，能自动或手动启动相关消防设备并显示其状态的设备称为消防控制设备。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "消防控制设备的定义。"
+            },
+            {
+                id: 283,
+                type: "truefalse",
+                question: "保安员肖某在服务区域巡逻中，发现有人正在实施盗窃，肖某立即报警，同时将盗窃者抓获并立即进行讯问。肖某的这种行为不违法。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "保安员无权讯问犯罪嫌疑人，应扭送公安机关。"
+            },
+            {
+                id: 284,
+                type: "truefalse",
+                question: "使用鸭嘴式二氧化碳灭火器时，应先拔去保险插销，然后压紧压把，二氧化碳气体便会从喇叭形角口喷出灭火。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "鸭嘴式二氧化碳灭火器的使用方法。"
+            },
+            {
+                id: 285,
+                type: "truefalse",
+                question: "某市保安服务公司为加强管理，提高保安服务水平，制定了本公司的保安服务行为规范，该规范属于我国法律体系的组成部分。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "公司内部规范不属于法律体系。"
+            },
+            {
+                id: 286,
+                type: "truefalse",
+                question: "保安员对于区域巡逻中发现的案、事件现场应当进行保护，划定警戒区域，不准无关人员出入。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "保护现场是保安员的职责。"
+            },
+            {
+                id: 287,
+                type: "truefalse",
+                question: "虹视网膜识别技术，是用于视频监控系统前端设备中的技术。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "虹视网膜识别技术用于出入口控制系统。"
+            },
+            {
+                id: 288,
+                type: "truefalse",
+                question: "频谱分析设备是入侵报警系统前端设备。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "频谱分析设备不是入侵报警系统前端设备。"
+            },
+            {
+                id: 289,
+                type: "truefalse",
+                question: "电子巡查系统是对巡查人员是否按规定的路线、时间和数量巡查了规定地点，进行监督管理的最有效的工具。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "电子巡查系统的作用。"
+            },
+            {
+                id: 290,
+                type: "truefalse",
+                question: "周界是指需要进行实体防护和/或电子防护的某区域。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "周界是指区域边界。"
+            },
+            {
+                id: 291,
+                type: "truefalse",
+                question: "保安从业单位为保安员配备必要的装备是保安员应享有的劳动条件和劳动保护权利。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "配备必要装备是保安员的权利。"
+            },
+            {
+                id: 292,
+                type: "truefalse",
+                question: "在给伤病员心肺复苏时，为了保持连续性，即使医务人员来接替，救护员也不要将伤病员交给医务人员。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "医务人员到达后应交给医务人员处理。"
+            },
+            {
+                id: 293,
+                type: "truefalse",
+                question: "道路交通标志的主标志包括警告标志、指示标志、禁令标志、指路标志等。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "道路交通标志的分类。"
+            },
+            {
+                id: 294,
+                type: "truefalse",
+                question: "在道路交通活动中，人行横道信号灯红灯亮时，已经进入人行横道的行人可以继续通行或者在道路中心线处停留等候。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "行人已进入人行横道的可以继续通行。"
+            },
+            {
+                id: 295,
+                type: "truefalse",
+                question: "在道路交通活动中，禁令标志应当设置在通往禁令区出口前的适当位置。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "禁令标志应设置在禁令区入口前适当位置。"
+            },
+            {
+                id: 296,
+                type: "truefalse",
+                question: "在道路交通活动中，方向指示信号灯红色或黄色箭头表示仅对箭头所指向方向起红灯或黄灯作用。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "方向指示信号灯的作用。"
+            },
+            {
+                id: 297,
+                type: "truefalse",
+                question: "监视区是指实体周界防护系统和/或电子周界防护系统所组成的周界警戒线与防护区边界之间的区域。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "监视区的定义。"
+            },
+            {
+                id: 298,
+                type: "truefalse",
+                question: "禁区是指在警戒范围内，安全防范手段未能覆盖的区域。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "这是盲区的定义。禁区是不允许未授权人员进入的区域。"
+            },
+            {
+                id: 299,
+                type: "truefalse",
+                question: "火灾报警装置是用以接收、显示和传输火灾报警信号，并能发出控制信号和具有其他辅助功能的控制设备。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "火灾报警装置的定义。"
+            },
+            {
+                id: 300,
+                type: "truefalse",
+                question: "车辆探测器、挡车器是出入口控制系统的主要设备。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "这些是出入口控制系统的设备。"
+            },
+            {
+                id: 301,
+                type: "truefalse",
+                question: "某客户单位领导让保安员小李去追索债务，小李因拒绝领导的要求而被辞退，该单位领导的做法是正确的。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "保安员不得参与追索债务，单位辞退员工违法。"
+            },
+            {
+                id: 302,
+                type: "truefalse",
+                question: "保安员王某在值勤中与犯罪嫌疑人搏斗光荣负伤，当地政府对其进行表彰，并颁发了抚恤金。这是保安员享受社会保险权利的体现。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "这是获得表彰奖励的权利，不是社会保险权利。"
+            },
+            {
+                id: 303,
+                type: "truefalse",
+                question: "设置路障警戒是指对人员密集场所中的警戒对象，采取设置警戒线等方式进行封闭式隔离，防止无关人员接近保护目标和随意出入保护区域。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "设置路障警戒的定义。"
+            },
+            {
+                id: 304,
+                type: "truefalse",
+                question: "保安员在区域巡逻中可能遭遇违法犯罪分子的袭击和治安灾害事故，因此保安员在巡逻中要提高警惕、加强防护。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "巡逻中应注意安全防护。"
+            },
+            {
+                id: 305,
+                type: "truefalse",
+                question: "保安员对特定目标进行巡视、检查服务是保安巡逻的服务形式之一。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "这是巡逻的服务形式之一。"
+            },
+            {
+                id: 306,
+                type: "truefalse",
+                question: "保安巡逻是指保安员在特定岗位进行检查、警戒的服务形式。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "巡逻不是在特定岗位，而是在区域内移动检查。"
+            },
+            {
+                id: 307,
+                type: "truefalse",
+                question: "保安巡逻是指保安员对特定目标进行检查、警戒的服务形式。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "巡逻不仅针对特定目标，还包括区域。"
+            },
+            {
+                id: 308,
+                type: "truefalse",
+                question: "步巡便于巡逻人员与巡逻区域内的群众沟通与交流。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "步巡的特点。"
+            },
+            {
+                id: 309,
+                type: "truefalse",
+                question: "区域巡逻是\"主动防护\"，要求保安员不停地巡视、检查和警戒，时刻注意观察发现可疑人、可疑物、可疑事。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "区域巡逻的特点。"
+            },
+            {
+                id: 310,
+                type: "truefalse",
+                question: "道路交通标志的柱式支撑方式包括单柱式和双柱式两种。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "交通标志支撑方式。"
+            },
+            {
+                id: 311,
+                type: "truefalse",
+                question: "保安巡逻是指保安员对特定目标进行检查、警戒的服务形式。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "巡逻不仅针对特定目标。"
+            },
+            {
+                id: 312,
+                type: "truefalse",
+                question: "保安巡逻是指保安员在特定的地段进行巡视、检查的服务形式。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "巡逻不仅限于特定地段。"
+            },
+            {
+                id: 313,
+                type: "truefalse",
+                question: "保安巡逻是指保安员对特定的目标进行巡视、检查的服务形式。",
+                options: ["正确", "错误"],
+                correctAnswer: "错误",
+                explanation: "巡逻的定义更广泛。"
+            },
+            {
+                id: 314,
+                type: "truefalse",
+                question: "保安员对特定区域实施检查、警戒服务是保安巡逻的服务形式之一。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "这是巡逻的服务形式之一。"
+            },
+            {
+                id: 315,
+                type: "truefalse",
+                question: "保安员对特定地段进行检查、警戒服务是保安巡逻的服务形式之一。",
+                options: ["正确", "错误"],
+                correctAnswer: "正确",
+                explanation: "这是巡逻的服务形式之一。"
+            },
+            // 多选题 第316题-第400题
+            {
+                id: 316,
+                type: "multi",
+                question: "下列叙述涉嫌构成妨害公务罪的是（ ）。",
+                options: ["A: 保安员以暴力、威胁方法阻碍某省人大代表团的视察活动", "B: 保安员以威胁的方法阻碍着便装的税务人员到其服务的歌厅消费", "C: 在抗震救灾中以危险为由阻止红十字会工作人员进入灾区", "D: 某歌厅保安员故意设置障碍拒绝民警入内进行安全检查", "E: 以暴力、威胁方法阻碍着便装的工商干部进入餐厅消费"],
+                correctAnswer: ["A", "C", "D"],
+                explanation: "妨害公务罪是指以暴力、威胁方法阻碍国家机关工作人员、人大代表、红十字会工作人员依法执行职务的行为。选项B和E中，对方未表明身份且未在执行公务，不构成本罪。"
+            },
+            {
+                id: 317,
+                type: "multi",
+                question: "属于特种车辆的是（ ）。",
+                options: ["A: 前往抢救病人的救护车", "B: 执行完救火任务的消防车", "C: 赶往案发现场的警车", "D: 赶往坍塌桥梁现场的工程救险车", "E: 运送邮件的邮政车辆"],
+                correctAnswer: ["A", "C", "D"],
+                explanation: "特种车辆是指警车、消防车、救护车、工程救险车等执行紧急任务时，可以使用警报器、标志灯具的车辆。执行完任务的消防车和普通邮政车辆不属于执行紧急任务的特种车辆。"
+            },
+            {
+                id: 318,
+                type: "multi",
+                question: "根据《治安管理处罚法》的规定，对违法行为人（ ）的处罚决定只能由县级以上公安机关作出。",
+                options: ["A: 依法拘役3个月", "B: 治安拘留5日", "C: 吊销保安服务许可证", "D: 罚款200元", "E: 强行带离现场"],
+                correctAnswer: ["B", "C"],
+                explanation: "根据《治安管理处罚法》规定，治安拘留和吊销公安机关发放的许可证的处罚决定只能由县级以上公安机关作出。"
+            },
+            {
+                id: 319,
+                type: "multi",
+                question: "下列做法正确的是（ ）。",
+                options: ["A: 城市公共汽车在站点前5米处停车下客", "B: 出租车在没有公交车的公交站点停车上下乘客", "C: 出租车在距离加油站１０米左右停车等候加油", "D: 在道路上行驶的汽车爆胎时，驾驶人应立即停车，就地更换轮胎", "E: 机动车在宽度4.5米的路段停车下客"],
+                correctAnswer: ["C", "E"],
+                explanation: "A错误，公交车站点30米内不得停车；B错误，出租车不得在公交站点停车；D错误，爆胎时应将车移至安全地带更换；C和E符合规定。"
+            },
+            {
+                id: 320,
+                type: "multi",
+                question: "在道路交通活动中，机动车载物时需要注意的是（ ）。",
+                options: ["A: 机动车载物，长度不得超出车厢", "B: 机动车载物，高度从地面起不得超出车厢2米", "C: 载客汽车不得载货", "D: 载货汽车车厢不得载客", "E: 机动车载物，宽度不得超出车厢"],
+                correctAnswer: ["A", "C", "D", "E"],
+                explanation: "B错误，大型货运汽车高度从地面起不得超过4米，其他机动车不得超过2.5米，不是一律不得超过2米。其他选项均正确。"
+            },
+            {
+                id: 321,
+                type: "multi",
+                question: "在没有中心线的道路上，机动车相遇相对方向来车时应当（ ）。",
+                options: ["A: 减速靠右行驶", "B: 保持原有速度行驶", "C: 与其他车辆保持必要的安全距离", "D: 与行人保持必要的安全距离", "E: 鸣喇叭并迅速通过"],
+                correctAnswer: ["A", "C", "D"],
+                explanation: "在没有中心线的道路上会车应减速靠右，保持安全距离，B和E的做法不安全。"
+            },
+            {
+                id: 322,
+                type: "multi",
+                question: "在道路交通活动中，（ ）情况可以超车。",
+                options: ["A: 没有中心线的道路", "B: 前车为正在作业的洒水车", "C: 前车为前去加油的救护车", "D: 行经隧道", "E: 行经窄桥"],
+                correctAnswer: ["A", "B", "C"],
+                explanation: "D和E不能超车，隧道和窄桥禁止超车。A、B、C在确保安全的情况下可以超车。"
+            },
+            {
+                id: 323,
+                type: "multi",
+                question: "保护好火灾现场，能为查清火灾发生的真正原因提供许多重要的证据。保护火灾现场的主要措施为（ ）。",
+                options: ["A: 划出警戒区，指派专人看护", "B: 火灾现场的一切遗留物，燃烧过的物质及其陈设的位置，必须保持原样", "C: 火灾现场的一切遗留物，未燃烧过的物质及其陈设的位置，必须保持原样", "D: 撤销现场保护，清扫火灾现场，必须得到当地公安消防监督机关的同意", "E: 除事主外不准无关人员进入现场"],
+                correctAnswer: ["A", "B", "C", "D"],
+                explanation: "E错误，事主也不应进入现场，所有无关人员都不能进入。其他选项都是正确的保护措施。"
+            },
+            {
+                id: 324,
+                type: "multi",
+                question: "（ ）发生火灾可使用泡沫灭火器。",
+                options: ["A: 石油化工企业", "B: 汽车库", "C: 柴油仓库", "D: 煤矿", "E: 金属"],
+                correctAnswer: ["A", "B", "C", "D"],
+                explanation: "泡沫灭火器适用于A类、B类火灾，不适用于金属火灾（D类）。石油化工、汽车库、柴油仓库、煤矿都可能发生A类或B类火灾。"
+            },
+            {
+                id: 325,
+                type: "multi",
+                question: "火灾应急预案中，必须明确人员分工，可以划分为（ ）。",
+                options: ["A: 抢救物资组", "B: 火灾发生后的报警组", "C: 灭火救援组", "D: 医疗救护组", "E: 引导人员疏散组"],
+                correctAnswer: ["A", "B", "C", "D", "E"],
+                explanation: "火灾应急预案应明确各小组分工，包括报警、灭火、疏散、救护、物资抢救等。"
+            },
+            {
+                id: 326,
+                type: "multi",
+                question: "物业停车场常用的管理设施有（ ）。",
+                options: ["A: 出入登记制度", "B: 雷达测速系统", "C: 监控系统", "D: 智能通行系统", "E: 机动车安全技术检验系统"],
+                correctAnswer: ["C", "D"],
+                explanation: "物业停车场常用监控系统和智能通行系统（如车牌识别、道闸等）。A是制度不是设施，B和E一般不由物业配备。"
+            },
+            {
+                id: 327,
+                type: "multi",
+                question: "在出入口守卫中，专用设施控制岗是对（ ）进行控制的岗位。",
+                options: ["A: 内部管理设备", "B: 出入口专用设施设备", "C: 楼宇对讲系统", "D: 电子系统", "E: 特殊设施设备"],
+                correctAnswer: ["B", "D"],
+                explanation: "专用设施控制岗主要负责出入口的专用设施设备和电子系统的控制。"
+            },
+            {
+                id: 328,
+                type: "multi",
+                question: "在出入口守卫勤务实施中，保安员按照规定应做好的工作有（ ）。",
+                options: ["A: 处理纠纷", "B: 验证", "C: 登记", "D: 报告", "E: 交接班"],
+                correctAnswer: ["B", "C", "D", "E"],
+                explanation: "出入口守卫的主要工作包括验证、登记、报告、交接班等。处理纠纷不是出入口守卫的常规工作。"
+            },
+            {
+                id: 329,
+                type: "multi",
+                question: "保安员在履行登记职责时，错误的做法有（ ）。",
+                options: ["A: 单独对登记人进行搜身", "B: 处理可疑人员和物品", "C: 登记时与对方保持安全距离", "D: 注意自身防护", "E: 发现可疑人及时报告"],
+                correctAnswer: ["A", "B"],
+                explanation: "A错误，保安员无权搜身；B错误，处理可疑人员和物品不是登记时的职责，应报告。C、D、E是正确的做法。"
+            },
+            {
+                id: 330,
+                type: "multi",
+                question: "影响目标部位安全的因素有（ ）。",
+                options: ["A: 物", "B: 人", "C: 高压变电站", "D: 技术", "E: 自然"],
+                correctAnswer: ["A", "B", "D", "E"],
+                explanation: "影响目标部位安全的因素包括人、物、技术、自然等方面。C是具体场所，不是因素类型。"
+            },
+            {
+                id: 331,
+                type: "multi",
+                question: "扑救带电火灾必须使用绝缘性能好、不会发生触电伤人事故的灭火器，下列可以作为扑救带电火灾的有（ ）。",
+                options: ["A: 消防水枪直接喷射", "B: 泡沫灭火器", "C: 干粉灭火器", "D: 二氧化碳灭火器", "E: 室内消火栓"],
+                correctAnswer: ["C", "D"],
+                explanation: "干粉灭火器和二氧化碳灭火器可用于扑救带电火灾，其他选项可能导电造成触电。"
+            },
+            {
+                id: 332,
+                type: "multi",
+                question: "保安员在保护区域开展安全检查的意义体现在（ ）。",
+                options: ["A: 是区域保安服务工作的基本任务", "B: 是消除各种安全隐患的有效措施", "C: 是预防违法犯罪的有效措施", "D: 是确保客户单位或服务区域内人身财产安全的有效措施", "E: 是打击各类违法犯罪的主要手段"],
+                correctAnswer: ["A", "B", "C", "D"],
+                explanation: "安全检查的主要意义在于预防和消除安全隐患，确保安全。E错误，打击违法犯罪不是安全检查的主要目的。"
+            },
+            {
+                id: 333,
+                type: "multi",
+                question: "下列属于保安员职责任务的是（ ）。",
+                options: ["A: 维护客户单位及服务区域的正常秩序", "B: 开展守护、巡逻活动", "C: 设置临时隔离区", "D: 制止违法犯罪行为", "E: 查验出入人员的证件"],
+                correctAnswer: ["A", "B", "C", "D", "E"],
+                explanation: "这些都是保安员的职责任务。"
+            },
+            {
+                id: 334,
+                type: "multi",
+                question: "保安员在出入口值勤时，主要完成的职责任务是（ ）。",
+                options: ["A: 查验证件", "B: 来访登记", "C: 帮助他人", "D: 疏导人员与车辆", "E: 维护秩序"],
+                correctAnswer: ["A", "B", "D", "E"],
+                explanation: "出入口值勤的主要职责是验证、登记、疏导、维护秩序。帮助他人不是主要职责。"
+            },
+            {
+                id: 335,
+                type: "multi",
+                question: "下列属于出入口守卫方案的内容是（ ）。",
+                options: ["A: 出入口守卫任务", "B: 上岗保安员人数", "C: 具体岗位要求", "D: 客户单位人员情况", "E: 应急措施"],
+                correctAnswer: ["A", "B", "C", "E"],
+                explanation: "出入口守卫方案应包括任务、人员、岗位要求、应急措施等。客户单位人员情况不是必须内容。"
+            },
+            {
+                id: 336,
+                type: "multi",
+                question: "保安员在登记时，应注意的事项有（ ）。",
+                options: ["A: 详细询问来访者个人情况", "B: 登记时要与对方保持安全距离", "C: 质押来访人员证件", "D: 注意自身防护", "E: 发现可疑人要及时报告"],
+                correctAnswer: ["B", "D", "E"],
+                explanation: "A错误，不应详细询问个人隐私；C错误，不能质押他人证件。B、D、E是正确的注意事项。"
+            },
+            {
+                id: 337,
+                type: "multi",
+                question: "在出入口守卫中，保安员在观察时应具备的能力有（ ）。",
+                options: ["A: 敏锐的观察力", "B: 处理纠纷的能力", "C: 准确的判断力", "D: 快速的反应力", "E: 处理紧急情况的能力"],
+                correctAnswer: ["A", "C", "D"],
+                explanation: "观察时需要观察力、判断力和反应力。B和E是处理问题的能力，不是观察时需要具备的。"
+            },
+            {
+                id: 338,
+                type: "multi",
+                question: "保安员小李在某大学机动车出入口值勤时，学生小张步行要进入校区，小李上前进行劝阻，正确的做法是（ ）。",
+                options: ["A: 用礼貌用语劝阻他通行", "B: 大声喊：\"站住，你不能从这里过！\"", "C: 向小张说明此出入口只能通过机动车", "D: 强行阻止小张进入", "E: 告诉小张人员出入口的具体位置"],
+                correctAnswer: ["A", "C", "E"],
+                explanation: "应用礼貌用语劝阻，说明规定，并指引正确出入口。B不礼貌，D不应强行阻止。"
+            },
+            {
+                id: 339,
+                type: "multi",
+                question: "给伤员止血前，救护员应当（ ）。",
+                options: ["A: 观察环境，保证安全", "B: 表明自己的身份", "C: 做好自我防护", "D: 寻找铁丝或细绳", "E: 寻找伤员家属"],
+                correctAnswer: ["A", "B", "C"],
+                explanation: "止血前应确保环境安全，表明身份，做好自我防护。D错误，止血应使用专用材料；E不是必要步骤。"
+            },
+            {
+                id: 340,
+                type: "multi",
+                question: "建筑物内火灾发生时，保安员在组织引导楼上人员逃生时，应当提示人们（ ）。",
+                options: ["A: 用湿毛巾或衣物捂住口鼻", "B: 以弯腰或匍匐的行进姿势，撤到安全地点寻机逃生", "C: 如果通道被大火阻断，可选择跳楼逃生", "D: 可利用房屋的阳台、落水管或竹竿等逃生", "E: 尽量往疏散楼梯方向跑"],
+                correctAnswer: ["A", "B", "D", "E"],
+                explanation: "C错误，跳楼逃生危险，一般不提倡。其他选项都是正确的火灾逃生提示。"
+            },
+            {
+                id: 341,
+                type: "multi",
+                question: "如果高层建筑疏散通道被大火阻断，则可以按照以下方式引导人员逃生（ ）。",
+                options: ["A: 多层建筑可利用房屋的阳台、落水管或竹竿等逃生", "B: 疏散到相对安全的房间，关闭好门窗，堵死缝隙，防止烟气进入", "C: 确实无路可逃时，可利用身边的绳子或将床单、被罩等撕成条状连接起来，系牢后顺沿滑下逃生", "D: 楼层不高、必须跳楼逃生时，可用棉被、床单保护好头部、胸部等重点部位，并先抛下一些物品，以增加缓冲，然后用手扶住窗台往下滑，并保证双脚首先落地", "E: 可以向室外扔出物品或以呼喊、打手电等方式，发出求救信号，引起救援人员注意"],
+                correctAnswer: ["A", "B", "C", "D", "E"],
+                explanation: "所有选项都是高层建筑火灾逃生时的正确方法。"
+            },
+            {
+                id: 342,
+                type: "multi",
+                question: "勤务方案是保安员岗位工作的依据和指南，它的编写要求是（ ）。",
+                options: ["A: 结构编写合理", "B: 全面", "C: 细致", "D: 文字简练", "E: 操作性强"],
+                correctAnswer: ["A", "B", "C", "D", "E"],
+                explanation: "勤务方案编写应做到结构合理、内容全面细致、文字简练、操作性强。"
+            },
+            {
+                id: 343,
+                type: "multi",
+                question: "保安员在交接班时应完成（ ）。",
+                options: ["A: 交班人员要认真做好记录", "B: 记录当班时岗位情况并签字", "C: 交代接班人员应继续关注的问题", "D: 将携带的防护器材交给接班人员", "E: 将记录本和通讯器材交给接班人员"],
+                correctAnswer: ["A", "B", "C", "D", "E"],
+                explanation: "这些都是交接班时应完成的事项。"
+            },
+            {
+                id: 344,
+                type: "multi",
+                question: "保安员在守护时发现目标区域存在安全隐患，正确的做法是（ ）。",
+                options: ["A: 向客户单位报告", "B: 及时采取有效措施", "C: 消除隐患", "D: 向保安公司管理部门报告", "E: 保护现场"],
+                correctAnswer: ["A", "B", "C"],
+                explanation: "发现隐患应报告客户单位，及时采取措施消除。D不是必须的，E保护现场适用于案事件，不适用于安全隐患。"
+            },
+            {
+                id: 345,
+                type: "multi",
+                question: "保安服务公司可以为（ ）提供保安服务。",
+                options: ["A: 学校", "B: 机关", "C: 企业", "D: 游乐场", "E: 演艺明星"],
+                correctAnswer: ["A", "B", "C", "D", "E"],
+                explanation: "保安服务公司可以为各类单位和个人提供保安服务。"
+            },
+            {
+                id: 346,
+                type: "multi",
+                question: "下列违反治安管理的行为属于妨害社会管理行为的是（ ）。",
+                options: ["A: 吸食毒品", "B: 毁损公共设施", "C: 强迫劳动", "D: 谎报警情", "E: 购买赃物"],
+                correctAnswer: ["A", "D", "E"],
+                explanation: "吸食毒品、谎报警情、购买赃物属于妨害社会管理行为。B属于妨害公共安全，C属于侵犯人身权利。"
+            },
+            {
+                id: 347,
+                type: "multi",
+                question: "根据《治安管理处罚法》的规定，治安拘留的期限分为（ ）几个档次。",
+                options: ["A: 3日以下", "B: 1日以上5日以下", "C: 5日以上10日以下", "D: 10日以上15日以下", "E: 15日以上20日以下"],
+                correctAnswer: ["B", "C", "D"],
+                explanation: "治安拘留期限为1-5日、5-10日、10-15日三个档次。"
+            },
+            {
+                id: 348,
+                type: "multi",
+                question: "保安员在保护区域开展报警监控活动的意义体现在（ ）。",
+                options: ["A: 是确保客户单位或服务区域内人身财产安全的有效措施", "B: 是消除各种安全隐患的有效措施", "C: 是预防违法犯罪的有效措施", "D: 是区域保安服务工作的基本任务", "E: 是打击各类违法犯罪的主要手段"],
+                correctAnswer: ["A", "B", "C", "D"],
+                explanation: "报警监控的主要意义在于预防和消除安全隐患，确保安全。E错误，打击违法犯罪不是报警监控的主要目的。"
+            },
+            {
+                id: 349,
+                type: "multi",
+                question: "（ ）是全球卫星定位系统的功能。",
+                options: ["A: 车辆监控", "B: 反劫防盗", "C: 导航", "D: 最优路径向导", "E: 倒车防撞"],
+                correctAnswer: ["A", "B", "C", "D"],
+                explanation: "GPS具有车辆监控、反劫防盗、导航、路径向导等功能。E倒车防撞不是GPS的功能。"
+            },
+            {
+                id: 350,
+                type: "multi",
+                question: "火灾报警控制器按其用途不同可分为（ ）火灾报警控制器几种基本类型。",
+                options: ["A: 主动型", "B: 区域型", "C: 集中型", "D: 被动性", "E: 通用型"],
+                correctAnswer: ["B", "C", "E"],
+                explanation: "火灾报警控制器按用途分为区域型、集中型和通用型。"
+            },
+            {
+                id: 351,
+                type: "multi",
+                question: "保安员小陈在政府机关门卫值勤，遇一来访者，小陈请其出示有效证件，来访人将身份证交给小陈，小陈查验证件的正确做法是（ ）。",
+                options: ["A: 查看身份证上的出生日期与来访者年龄是否相符", "B: 核对身份证上的照片与本人是否相符", "C: 请来访人出示其他有效证件", "D: 查验身份证真伪", "E: 查看身份证是否在有效期内"],
+                correctAnswer: ["A", "B", "D", "E"],
+                explanation: "验证身份证应核对照片、年龄、有效期和真伪。C不必要，身份证是有效证件。"
+            },
+            {
+                id: 352,
+                type: "multi",
+                question: "在我国刑法规定的故意伤害罪中，只有伤害结果达到（ ）的才能构成故意伤害罪。",
+                options: ["A: 轻微伤", "B: 轻伤", "C: 重伤", "D: 残疾", "E: 死亡"],
+                correctAnswer: ["B", "C", "D", "E"],
+                explanation: "故意伤害罪要求伤害结果达到轻伤以上，包括轻伤、重伤、残疾或死亡。"
+            },
+            {
+                id: 353,
+                type: "multi",
+                question: "某天，保安员小张在出入口值勤时正逢上班高峰期，进入服务单位的人员较集中。突然，他发现一个鬼鬼祟祟，形迹可疑的人正随着人流进入。此时小张错误的做法是（ ）。",
+                options: ["A: 上前抓住可疑人送交客户单位保卫部门", "B: 立即向客户单位保卫部门报告可疑人行迹", "C: 立即将大门关上，禁止人员出入", "D: 上前查验可疑人证件并向客户单位报告", "E: 离开岗位，跟踪可疑人"],
+                correctAnswer: ["A", "C", "E"],
+                explanation: "A错误，不应直接抓人；C错误，不应关闭大门影响正常通行；E错误，不应离开岗位。B和D是正确的做法。"
+            },
+            {
+                id: 354,
+                type: "multi",
+                question: "保安员在出入口履行疏导职责时，正确的做法是（ ）。",
+                options: ["A: 劝阻逗留在出入口的来访人员离开", "B: 在出入口出现交通拥堵时进行疏导", "C: 在疏导时发现可疑人立即报告客户单位", "D: 遇有火灾或其他紧急情况应配合相关部门完成工作", "E: 遇有可疑情况立即报告客户单位"],
+                correctAnswer: ["A", "B", "C", "D", "E"],
+                explanation: "这些都是出入口疏导的正确做法。"
+            },
+            {
+                id: 355,
+                type: "multi",
+                question: "下列属于保安从业单位的是（ ）。",
+                options: ["A: 某市保安服务公司", "B: 自行招用保安员的某中学", "C: 自行招用保安员的某大学保卫处", "D: 自行招用保安员的某企业保卫部", "E: 自行招用保安员的某企业"],
+                correctAnswer: ["A", "B", "E"],
+                explanation: "保安从业单位包括保安服务公司和自行招用保安员的单位（如中学、企业）。C和D是内设机构，不是独立单位。"
+            },
+            {
+                id: 356,
+                type: "multi",
+                question: "交通标志中单柱式的支撑方式一般适用于中、小型尺寸的（ ）。",
+                options: ["A: 道路施工安全标志", "B: 警告标志", "C: 禁令标志", "D: 指示标志", "E: 旅游区标志"],
+                correctAnswer: ["B", "C", "D"],
+                explanation: "单柱式适用于中小型的警告、禁令、指示标志。道路施工安全标志和旅游区标志通常用其他支撑方式。"
+            },
+            {
+                id: 357,
+                type: "multi",
+                question: "在目标部位守护工作中，流动岗工作的特点是（ ）。",
+                options: ["A: 必须注意活动区域内的地形地貌", "B: 按照规定的路线和区域巡查", "C: 随时加强重要部位的巡查", "D: 根据天气变化情况选择巡查路线", "E: 在恶劣天气时可减少巡查频次"],
+                correctAnswer: ["A", "B", "C"],
+                explanation: "流动岗工作特点是注意地形地貌、按规定路线巡查、加强重要部位巡查。D和E不是流动岗的特点。"
+            },
+            {
+                id: 358,
+                type: "multi",
+                question: "机动车超车时，应注意（ ）。",
+                options: ["A: 超车前应开启左转向灯", "B: 发超车信号，示意前车做好被超越准备", "C: 超车完毕返回原车道时，关闭左转向灯，开启右转向灯", "D: 在确认安全的情况下驶回原车道", "E: 超车完毕后，关闭右转向灯，恢复正常行驶"],
+                correctAnswer: ["A", "B", "C", "D"],
+                explanation: "超车时应开启左转向灯，发超车信号，超车后开启右转向灯返回原车道，确认安全后驶回。E错误，超车完毕后应关闭转向灯，但不需要特别说明。"
+            },
+            {
+                id: 359,
+                type: "multi",
+                question: "我国刑法明确规定了以危险方法危害公共安全罪，下列属于以危险方法危害公共安全的行为是（ ）。",
+                options: ["A: 放火", "B: 驾车撞人", "C: 爆炸", "D: 投放危险物质", "E: 故意传播突发传染病病原体"],
+                correctAnswer: ["B", "E"],
+                explanation: "以危险方法危害公共安全罪是指使用与放火、决水、爆炸、投放危险物质相当的危险方法危害公共安全的行为。驾车撞人和故意传播传染病病原体属于此类。A、C、D是独立罪名。"
+            },
+            {
+                id: 360,
+                type: "multi",
+                question: "押运人员站位警戒时，有人进入安全区域，应该（ ）。",
+                options: ["A: 将该人强行带离安全区域", "B: 保持警惕，及时劝阻", "C: 不听劝阻时，求助公安机关协助解决", "D: 对无理取闹的要积极劝阻", "E: 强制带入银行保卫部门接受处理"],
+                correctAnswer: ["B", "C", "D"],
+                explanation: "应保持警惕、及时劝阻，不听劝阻时报警求助，对无理取闹者积极劝阻。A和E可能激化矛盾，不是最佳选择。"
+            },
+            {
+                id: 361,
+                type: "multi",
+                question: "保安员甲看到保安员乙有一部3G手机，心里就盘算趁乙不注意的时候把手机偷了送给其女朋友。但由于乙把手机看管的比较严，甲一直没有机会偷走这部手机。下列说法正确的是（ ）。",
+                options: ["A: 甲有犯罪的故意", "B: 甲的行为属于犯罪未遂", "C: 甲的行为不具备犯罪的客观要件", "D: 甲的行为构不成犯罪", "E: 甲的行为属于犯罪中止"],
+                correctAnswer: ["A", "C", "D"],
+                explanation: "甲只有犯罪意图但没有实施犯罪行为，不具备客观要件，不构成犯罪。B和E错误，因为没有实施行为。"
+            },
+            {
+                id: 362,
+                type: "multi",
+                question: "（ ）引起的火灾不能使用干粉扑救。",
+                options: ["A: 钾、钠、镁、钛等活泼金属", "B: 金属氢化物", "C: 金属氧化物", "D: 天然气储罐", "E: 电源电线"],
+                correctAnswer: ["A", "B", "C"],
+                explanation: "干粉灭火器不适用于扑救活泼金属、金属氢化物和部分金属氧化物火灾。D和E可以使用干粉扑救。"
+            },
+            {
+                id: 363,
+                type: "multi",
+                question: "保安员小王在化工厂门卫值勤时，司机小李驾车送货离开。在通过出入口时，小王请其停车核对货物出库单并进行查验，小王的正确做法是（ ）。",
+                options: ["A: 对小李说：\"你好，请停车，请出示货物出库单。\"", "B: 在小李停车后，保安员小王打开车门查验货物", "C: 请小李打开车门，对照货物出库单进行核对", "D: 小李向小王说明货物没问题后，小王放行", "E: 小李打开车门后，小王看了看货物放行"],
+                correctAnswer: ["A", "C"],
+                explanation: "A和C是正确的做法。B错误，保安员不应自己打开车门；D和E错误，必须核对货物出库单，不能仅凭口头说明或简单查看就放行。"
+            },
+            {
+                id: 364,
+                type: "multi",
+                question: "根据《保安服务管理条例》规定，（ ）不属于保安员享有的权利。",
+                options: ["A: 查验出入证件", "B: 登记出入车辆", "C: 开展巡逻守护", "D: 享受劳动条件", "E: 享受劳动保护"],
+                correctAnswer: ["A", "B", "C"],
+                explanation: "查验证件、登记车辆、巡逻守护是保安员的职责，不是权利。D和E是保安员的权利。"
+            },
+            {
+                id: 365,
+                type: "multi",
+                question: "在有交通信号灯的交叉路口，非机动车应注意（ ）。",
+                options: ["A: 转弯时让直行的车辆、行人先行", "B: 遇有停止信号时，没有停止线的，停在路口以外", "C: 遇前方交叉路口堵塞时，可以进入交叉路口等候", "D: 右转弯时遇有同方向前车正在等候放行信号的，在本车道内能够转弯的，可以通行", "E: 右转弯时遇有同方向前车正在等候放行信号的，不能转弯的，依次等候"],
+                correctAnswer: ["A", "B", "E"],
+                explanation: "C错误，路口堵塞时不能进入路口；D错误，应依次等候，不能强行转弯。A、B、E是正确的交通规则。"
+            },
+            {
+                id: 366,
+                type: "multi",
+                question: "纵深防护体系是兼有（ ）的防护体系。",
+                options: ["A: 周界", "B: 盲区", "C: 禁区", "D: 监视区", "E: 防护区"],
+                correctAnswer: ["A", "C", "D", "E"],
+                explanation: "纵深防护体系包括周界、监视区、防护区和禁区。盲区是防范薄弱环节，不属于纵深防护体系的组成部分。"
+            },
+            {
+                id: 367,
+                type: "multi",
+                question: "入侵报警系统是指利用（ ）技术探测，并指示非法进入或试图非法进入设防区域的行为，处理报警信息，发出报警信息的电子系统或网络。",
+                options: ["A: 传感器", "B: 视频压缩", "C: 综合布线", "D: 电子信息", "E: 生物识别"],
+                correctAnswer: ["A", "D"],
+                explanation: "入侵报警系统利用传感器和电子信息技术探测非法入侵。"
+            },
+            {
+                id: 368,
+                type: "multi",
+                question: "下列设备是停车场管理系统中入口设备的有（ ）。",
+                options: ["A: 发卡机", "B: 挡车器", "C: 车辆检测线圈", "D: 全方位云台", "E: 视频监视器"],
+                correctAnswer: ["A", "B", "C"],
+                explanation: "发卡机、挡车器、车辆检测线圈是停车场入口设备。D和E是监控设备，不是专属于入口。"
+            },
+            {
+                id: 369,
+                type: "multi",
+                question: "下列设备是停车场管理系统中出口设备的有（ ）。",
+                options: ["A: 发卡机", "B: 挡车器", "C: 车辆检测线圈", "D: 摄像机", "E: 视频监视器"],
+                correctAnswer: ["B", "C", "D"],
+                explanation: "挡车器、车辆检测线圈、摄像机是停车场出口设备。A发卡机一般在入口，E视频监视器不是专属于出口。"
+            },
+            {
+                id: 370,
+                type: "multi",
+                question: "保安员维护客户单位及服务区域内的正常秩序，是（ ）的前提，也是保安服务的基本任务。",
+                options: ["A: 制止违法犯罪活动", "B: 消除治安灾害事故隐患", "C: 公安机关侦破案件", "D: 确保人身安全", "E: 化解社会矛盾"],
+                correctAnswer: ["A", "B", "D", "E"],
+                explanation: "维护正常秩序是制止违法犯罪、消除隐患、确保安全、化解矛盾的前提。C不是保安员的主要任务。"
+            },
+            {
+                id: 371,
+                type: "multi",
+                question: "某保安培训单位必须开设的培训内容有（ ）等。",
+                options: ["A: 刑事侦查手段", "B: 守护巡逻技能", "C: 火灾预防技能", "D: 礼仪礼貌知识", "E: 犯罪现场勘查方法"],
+                correctAnswer: ["B", "C", "D"],
+                explanation: "保安培训必须包括守护巡逻技能、火灾预防技能和礼仪礼貌知识。A和E是公安机关的专业技能，不是保安培训内容。"
+            },
+            {
+                id: 372,
+                type: "multi",
+                question: "某保安服务公司的保安员小王享有的权利是（ ）。",
+                options: ["A: 参加社会保险", "B: 检查出入车辆", "C: 开展巡逻守护", "D: 保守勤务秘密", "E: 签订劳动合同"],
+                correctAnswer: ["A", "E"],
+                explanation: "A和E是保安员的权利。B、C、D是保安员的职责或义务。"
+            },
+            {
+                id: 373,
+                type: "multi",
+                question: "在现场急救中，判断伤员有无意识的方法是（ ）。",
+                options: ["A: 双手轻拍伤病员肩部", "B: 在其耳边大声呼唤", "C: 摇晃伤病员身体", "D: 拍打脸部的同时，高声呼唤", "E: 双手拍打伤员脸部"],
+                correctAnswer: ["A", "B"],
+                explanation: "正确的方法是轻拍肩部并在耳边呼唤。C、D、E可能加重伤员伤情。"
+            },
+            {
+                id: 374,
+                type: "multi",
+                question: "在现场急救中，为了达到有效的人工呼吸，吹气时应同时做到（ ）。",
+                options: ["A: 多吹一些气，吹气时间延长一些", "B: 打开气道，张大嘴，包严伤员的嘴", "C: 深吸一口气再吹，更有效", "D: 为了防止吹气过量，可不捏鼻翼", "E: 捏紧鼻翼，缓慢、持续吹入气体"],
+                correctAnswer: ["B", "E"],
+                explanation: "正确做法是打开气道，包严伤员嘴巴，捏紧鼻翼，缓慢持续吹气。A和C错误，吹气量不宜过大；D错误，应捏鼻翼防止漏气。"
+            },
+            {
+                id: 375,
+                type: "multi",
+                question: "在现场急救中，下面关于胸外心脏按压说法正确的是（ ）。",
+                options: ["A: 每5个循环更换一个按压者", "B: 吹两口气后，立即进行按压", "C: 按压频率为100次/分钟", "D: 按压深度为4-5厘米", "E: 按压与吹气之比为100:2"],
+                correctAnswer: ["A", "C", "D"],
+                explanation: "A、C、D正确。B错误，应先检查呼吸和脉搏；E错误，按压与吹气比为30:2。"
+            },
+            {
+                id: 376,
+                type: "multi",
+                question: "保安员在依法享有权利的同时，还须履行相应的（ ）义务。",
+                options: ["A: 正当防卫", "B: 履行合同", "C: 保守秘密", "D: 紧急避险", "E: 勘查现场"],
+                correctAnswer: ["B", "C"],
+                explanation: "保安员的主要义务是履行合同和保守秘密。A和D是权利，E是公安机关的职责。"
+            },
+            {
+                id: 377,
+                type: "multi",
+                question: "根据《保安服务管理条例》的规定，（ ）是保安员必须履行的义务。",
+                options: ["A: 遵守法律", "B: 遵守纪律", "C: 遵守合同", "D: 保守秘密", "E: 守护巡逻"],
+                correctAnswer: ["A", "B", "C", "D"],
+                explanation: "A、B、C、D是保安员的义务。E是保安员的职责。"
+            },
+            {
+                id: 378,
+                type: "multi",
+                question: "我国刑法明确规定了以危险方法危害公共安全罪，下列不属于以危险方法危害公共安全的行为是（ ）。",
+                options: ["A: 放火", "B: 驾车撞人", "C: 爆炸", "D: 投放危险物质", "E: 故意传播突发传染病病原体"],
+                correctAnswer: ["A", "C", "D"],
+                explanation: "放火、爆炸、投放危险物质是独立罪名，不属于以危险方法危害公共安全罪。B和E属于此罪。"
+            },
+            {
+                id: 379,
+                type: "multi",
+                question: "保安员对巡逻中发现的案件、事故、事件现场应当立即进行保护。以下做法正确的是（ ）。",
+                options: ["A: 划定现场保护区域", "B: 设置警戒标志", "C: 不准无关人员进入", "D: 保护好现场证据", "E: 抢救伤员"],
+                correctAnswer: ["A", "B", "C", "D", "E"],
+                explanation: "所有选项都是保护现场的正确做法。"
+            },
+            {
+                id: 380,
+                type: "multi",
+                question: "下列设备是停车场管理系统中控制管理中心设备的有（ ）。",
+                options: ["A: 视频矩阵控制器", "B: 报表打印机", "C: 计算机", "D: 收费显示屏", "E: 发卡机"],
+                correctAnswer: ["B", "C", "D", "E"],
+                explanation: "报表打印机、计算机、收费显示屏、发卡机是控制管理中心设备。A视频矩阵控制器是监控系统设备。"
+            },
+            {
+                id: 381,
+                type: "multi",
+                question: "下列设备属于防爆安检设备的有（ ）。",
+                options: ["A: X射线检查设备", "B: 半球形摄像机", "C: 质谱分析设备", "D: 毫米波探测设备", "E: 金属探测设备"],
+                correctAnswer: ["A", "C", "D", "E"],
+                explanation: "X射线设备、质谱分析设备、毫米波探测设备、金属探测设备都是防爆安检设备。B是监控设备。"
+            },
+            {
+                id: 382,
+                type: "multi",
+                question: "火灾报警系统一般由（ ）等部分组成。",
+                options: ["A: 火灾探测报警器件", "B: 火灾报警装置", "C: 火灾警报装置", "D: 火灾灭火装置", "E: 电源"],
+                correctAnswer: ["A", "B", "C", "E"],
+                explanation: "火灾报警系统包括探测报警器件、报警装置、警报装置和电源。D灭火装置不属于报警系统。"
+            },
+            {
+                id: 383,
+                type: "multi",
+                question: "防爆安检系统主要检测的目标是（ ）。",
+                options: ["A: 爆炸物品", "B: 武器", "C: 金属器械", "D: 毒品", "E: 有毒食品"],
+                correctAnswer: ["A", "B", "C"],
+                explanation: "防爆安检主要检测爆炸物品、武器和金属器械。D和E不是主要检测目标。"
+            },
+            {
+                id: 384,
+                type: "multi",
+                question: "在某单位财务室内安装入侵报警设备可选择（ ）。",
+                options: ["A: 双技术报警器", "B: 振动报警器", "C: 电子围栏", "D: 云台", "E: 读卡器"],
+                correctAnswer: ["A", "B"],
+                explanation: "财务室适合安装双技术报警器和振动报警器。C电子围栏适用于周界，D云台是监控设备，E读卡器是出入口设备。"
+            },
+            {
+                id: 385,
+                type: "multi",
+                question: "保安从业单位应当定期对保安员进行考核，发现（ ）等品行问题，需要解除劳动合同的，应依法办理。",
+                options: ["A: 保安员违法犯罪", "B: 严重违反管理制度", "C: 未取得大专以上文凭", "D: 未取得本科文凭", "E: 严重违纪"],
+                correctAnswer: ["A", "B", "E"],
+                explanation: "违法犯罪、严重违反制度、严重违纪是解除合同的正当理由。学历不是解除合同的理由。"
+            },
+            {
+                id: 386,
+                type: "multi",
+                question: "关于保安员享受劳动条件和劳动保护的权利，下列说法正确的是（ ）。",
+                options: ["A: 劳动保护是用人单位保障保安员身体健康的有效措施", "B: 劳动保护是用人单位保障保安员生命安全的有效措施", "C: 劳动保护是用人单位预防保安员伤亡事故的有效措施", "D: 劳动保护是用人单位避免保安员生病的唯一措施", "E: 保安从业单位应当为保安员从事保安服务提供必要的条件和保护"],
+                correctAnswer: ["A", "B", "C", "E"],
+                explanation: "A、B、C、E正确。D错误，劳动保护不是避免生病的唯一措施。"
+            },
+            {
+                id: 387,
+                type: "multi",
+                question: "建筑物在高层发生火灾，在火势较大、无路可逃的情况下，保安员在引导人员疏散时，可以（ ）。",
+                options: ["A: 向室外扔出小东西，引起救援人员的注意", "B: 试图从火中冲出去", "C: 大声呼救", "D: 清除障碍物后跳楼逃生", "E: 从阳台直接往下跳"],
+                correctAnswer: ["A", "C"],
+                explanation: "A和C是正确的求救方法。B危险，不能冲入火中；D和E危险，高层跳楼可能致命。"
+            },
+            {
+                id: 388,
+                type: "multi",
+                question: "在火场中，防烟是逃生自救的关键。穿越浓烟区时（ ）。",
+                options: ["A: 用毛巾、口罩、床单、衣服作为临时的\"空气呼吸器\"", "B: 用湿衣服、湿床单、湿毛毯将身体裹好", "C: 若感到呼吸困难，可将毛巾从口鼻上拿开", "D: 保持冷静、清醒的头脑", "E: 低腰、匍匐前进"],
+                correctAnswer: ["A", "B", "D", "E"],
+                explanation: "A、B、D、E是正确的防烟措施。C错误，不能拿下毛巾，应用湿毛巾捂住口鼻。"
+            },
+            {
+                id: 389,
+                type: "multi",
+                question: "保安押运服务中，发生被押物品丢失时，正确的处理方法是（ ）。",
+                options: ["A: 沿途查找", "B: 立即报警", "C: 向本单位报告", "D: 隐瞒不报", "E: 联系客户单位说明情况"],
+                correctAnswer: ["B", "C"],
+                explanation: "押运物品丢失应立即报警并向本单位报告。A可能延误时机，D错误，E应在报警和报告后进行。"
+            },
+            {
+                id: 390,
+                type: "multi",
+                question: "押运中发生交通事故时，正确的处理方法是（ ）。",
+                options: ["A: 严密看管所押物品，确保安全", "B: 与事发地公安机关联系", "C: 向客户单位说明情况", "D: 向本单位报告", "E: 设定安全区域，禁止其他车辆通行"],
+                correctAnswer: ["A", "B", "C", "D"],
+                explanation: "A、B、C、D是正确的处理方法。E不必要，应由交警处理交通。"
+            },
+            {
+                id: 391,
+                type: "multi",
+                question: "制定押运应急预案的主要内容包括（ ）。",
+                options: ["A: 防盗抢预案", "B: 车辆事故预案", "C: 技术防范预案", "D: 自然灾害预案", "E: 门卫反恐预案"],
+                correctAnswer: ["A", "B", "D"],
+                explanation: "押运应急预案主要包括防盗抢、车辆事故和自然灾害预案。C和E不是押运应急预案的主要内容。"
+            },
+            {
+                id: 392,
+                type: "multi",
+                question: "在目标部位守护中，可采取（ ）形式对目标部位进行守护。",
+                options: ["A: 固定岗", "B: 流动岗", "C: 专用设施控制岗", "D: 瞭望岗", "E: 安全技术防范"],
+                correctAnswer: ["A", "B", "C", "D", "E"],
+                explanation: "所有选项都是目标部位守护的形式。"
+            },
+            {
+                id: 393,
+                type: "multi",
+                question: "安全技术防范在目标守护工作中的作用是（ ）。",
+                options: ["A: 提高工作效率", "B: 提高守护工作的科技含量", "C: 提升保安服务水平", "D: 提高巡逻人员对科技产品的认知能力", "E: 提高目标部位的安全度"],
+                correctAnswer: ["A", "B", "C", "E"],
+                explanation: "A、B、C、E是安全技术防范的作用。D不是主要作用。"
+            },
+            {
+                id: 394,
+                type: "multi",
+                question: "火灾现场中被困人员可利用（ ）发出呼救信号，以引起救援人员的注意，帮助自己脱离困境。",
+                options: ["A: 消防专用电话", "B: 大声呼救", "C: 手机", "D: 向外扔些小物品", "E: 消防电梯里的电话"],
+                correctAnswer: ["A", "B", "C", "D", "E"],
+                explanation: "所有选项都可以作为求救方式。"
+            },
+            {
+                id: 395,
+                type: "multi",
+                question: "高层建筑的火灾危险性表现在（ ）。",
+                options: ["A: 火灾蔓延快", "B: 疏散困难", "C: 扑救难度大", "D: 结构复杂，火灾隐患多", "E: 楼梯容易被烧断"],
+                correctAnswer: ["A", "B", "C", "D"],
+                explanation: "A、B、C、D是高层建筑火灾危险性。E是具体表现，不是主要危险性表现。"
+            },
+            {
+                id: 396,
+                type: "multi",
+                question: "火灾得到确认后，保安员在消防控制室可以实施的灭火行为有（ ）。",
+                options: ["A: 立即将火灾报警联动控制开关转入自动状态", "B: 立即将火灾报警联动控制开关转入手动状态", "C: 开启防火门、防火卷帘", "D: 立刻拨打\"119\"报警", "E: 迅速采取措施，设法尽快扑灭初起火灾"],
+                correctAnswer: ["A", "C", "D"],
+                explanation: "消防控制室人员应将系统转自动、开启相关设施、拨打119报警。B错误，应转自动；E错误，消防控制室人员不应离开岗位去灭火。"
+            },
+            {
+                id: 397,
+                type: "multi",
+                question: "在保安巡逻勤务中，车巡存在的工作缺陷有（ ）。",
+                options: ["A: 速度快、行程长、成本高", "B: 巡查范围大、机动性不强", "C: 速度快、难以细致观察情况", "D: 目标明显、隐蔽性不强", "E: 易受天气、道路、地形等条件限制"],
+                correctAnswer: ["C", "D", "E"],
+                explanation: "车巡的缺陷包括难以细致观察、目标明显易受天气道路限制。A和B是车巡的优点。"
+            },
+            {
+                id: 398,
+                type: "multi",
+                question: "机动车会车时应当遵守（ ）规则。",
+                options: ["A: 在有障碍的路段，无障碍的一方先行", "B: 夜间在窄桥与非机动车会车时应使用远光灯", "C: 夜间在窄路与非机动车会车时应使用近光灯", "D: 在有障碍的路段，有障碍的一方已经驶入障碍路段而无障碍的一方未驶入的，有障碍的一方先行", "E: 夜间会车应当在距离相对方向来车100米以内使用远光灯"],
+                correctAnswer: ["A", "C", "D"],
+                explanation: "A、C、D是正确的会车规则。B错误，应使用近光灯；E错误，应使用近光灯。"
+            },
+            {
+                id: 399,
+                type: "multi",
+                question: "机动车行经交通信号灯控制的交叉路口时，应当（ ）。",
+                options: ["A: 夜间行驶开启远光灯", "B: 向左转弯时，靠路口中心点左侧转弯", "C: 准备进入环形路口的让已在路口内的机动车先行", "D: 在没有方向指示信号灯的交叉路口，转弯的机动车让直行的车辆、行人先行", "E: 遇停止信号时，依次停在停止线以外"],
+                correctAnswer: ["B", "C", "D", "E"],
+                explanation: "B、C、D、E是正确的交通规则。A错误，夜间通过路口应使用近光灯。"
+            },
+            {
+                id: 400,
+                type: "multi",
+                question: "在保安巡逻勤务中，以下关于交叉巡逻说法正确的是（ ）。",
+                options: ["A: 是徒步巡逻的常见形式", "B: 是两组以上保安员分别从不同方位沿相互交叉的路线进行的巡逻", "C: 可以每名保安员单独编组", "D: 可以使保安员相互呼应，相互支援", "E: 适用于区域范围不大、巡逻中能够将区域全部纳入视线的情况"],
+                correctAnswer: ["A", "B", "D"],
+                explanation: "A、B、D正确。C错误，交叉巡逻需要分组进行；E错误，交叉巡逻适用于范围较大的区域。"
+            }
+        ];
+
+        // 应用状态
+        let currentQuestionIndex = 0;
+        let userAnswers = new Array(questions.length).fill(null);
+        let answerStatus = new Array(questions.length).fill(null); // null:未答, true:正确, false:错误
+        let showAnswer = false;
+        let currentFilter = "all";
+
+        // DOM元素
+        const questionTypeElement = document.getElementById('question-type');
+        const questionNumberElement = document.getElementById('question-number');
+        const questionTextElement = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const answerSection = document.getElementById('answer-section');
+        const correctAnswerElement = document.getElementById('correct-answer');
+        const answerExplanationElement = document.getElementById('answer-explanation');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const checkBtn = document.getElementById('check-btn');
+        const showAnswerBtn = document.getElementById('show-answer-btn');
+        const resetBtn = document.getElementById('reset-btn');
+        const questionListElement = document.getElementById('question-list');
+        const currentQuestionElement = document.getElementById('current-question');
+        const totalQuestionsElement = document.getElementById('total-questions');
+        const answeredCountElement = document.getElementById('answered-count');
+        const correctCountElement = document.getElementById('correct-count');
+        const scoreElement = document.getElementById('score');
+        const scoreDisplayElement = document.getElementById('score-display');
+        const progressBarElement = document.getElementById('progress-bar');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+
+        // 初始化
+        function init() {
+            totalQuestionsElement.textContent = questions.length;
+            updateQuestionList();
+            loadQuestion(currentQuestionIndex);
+            updateStats();
+            
+            // 设置事件监听器
+            prevBtn.addEventListener('click', goToPrevQuestion);
+            nextBtn.addEventListener('click', goToNextQuestion);
+            checkBtn.addEventListener('click', checkAnswer);
+            showAnswerBtn.addEventListener('click', toggleShowAnswer);
+            resetBtn.addEventListener('click', resetAnswers);
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 移除所有按钮的active类
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // 为当前按钮添加active类
+                    this.classList.add('active');
+                    // 更新筛选条件
+                    currentFilter = this.getAttribute('data-type');
+                    updateQuestionList();
+                });
+            });
+        }
+
+        // 加载题目
+        function loadQuestion(index) {
+            if (index < 0 || index >= questions.length) return;
+            
+            currentQuestionIndex = index;
+            const question = questions[index];
+            
+            // 更新题目类型标签
+            let typeLabel = "";
+            let typeClass = "";
+            switch(question.type) {
+                case "single":
+                    typeLabel = "单选题";
+                    typeClass = "single-choice";
+                    break;
+                case "truefalse":
+                    typeLabel = "判断题";
+                    typeClass = "true-false";
+                    break;
+                case "multi":
+                    typeLabel = "多选题";
+                    typeClass = "multi-choice";
+                    break;
+            }
+            questionTypeElement.textContent = typeLabel;
+            questionTypeElement.className = `question-type ${typeClass}`;
+            
+            // 更新题目编号和文本
+            questionNumberElement.textContent = `第${index + 1}题 (共${questions.length}题)`;
+            questionTextElement.textContent = question.question;
+            currentQuestionElement.textContent = index + 1;
+            
+            // 清空选项容器
+            optionsContainer.innerHTML = "";
+            
+            // 根据题型生成选项
+            if (question.type === "truefalse") {
+                // 判断题只有两个选项
+                const options = ["正确", "错误"];
+                options.forEach((option, i) => {
+                    const optionElement = document.createElement('div');
+                    optionElement.className = 'option';
+                    if (userAnswers[index] === option) {
+                        optionElement.classList.add('selected');
+                    }
+                    
+                    const optionLabel = document.createElement('span');
+                    optionLabel.className = 'option-label';
+                    optionLabel.textContent = i === 0 ? "√" : "×";
+                    
+                    const optionText = document.createElement('span');
+                    optionText.className = 'option-text';
+                    optionText.textContent = option;
+                    
+                    optionElement.appendChild(optionLabel);
+                    optionElement.appendChild(optionText);
+                    
+                    optionElement.addEventListener('click', () => selectOption(option));
+                    optionsContainer.appendChild(optionElement);
+                });
+            } else {
+                // 单选题和多选题
+                question.options.forEach((option, i) => {
+                    const optionElement = document.createElement('div');
+                    optionElement.className = 'option';
+                    
+                    // 检查是否已选择该选项
+                    if (question.type === "single" && userAnswers[index] === option.charAt(0)) {
+                        optionElement.classList.add('selected');
+                    } else if (question.type === "multi" && Array.isArray(userAnswers[index]) && 
+                              userAnswers[index].includes(option.charAt(0))) {
+                        optionElement.classList.add('selected');
+                    }
+                    
+                    // 如果显示了答案，标记正确/错误选项
+                    if (showAnswer) {
+                        const correctAnswer = question.correctAnswer;
+                        if (question.type === "single") {
+                            if (option.charAt(0) === correctAnswer) {
+                                optionElement.classList.add('correct');
+                            } else if (optionElement.classList.contains('selected') && option.charAt(0) !== correctAnswer) {
+                                optionElement.classList.add('incorrect');
+                            }
+                        } else if (question.type === "multi") {
+                            if (correctAnswer.includes(option.charAt(0))) {
+                                optionElement.classList.add('correct');
+                            } else if (optionElement.classList.contains('selected') && !correctAnswer.includes(option.charAt(0))) {
+                                optionElement.classList.add('incorrect');
+                            }
+                        }
+                    }
+                    
+                    const optionLabel = document.createElement('span');
+                    optionLabel.className = 'option-label';
+                    optionLabel.textContent = option.charAt(0);
+                    
+                    const optionText = document.createElement('span');
+                    optionText.className = 'option-text';
+                    optionText.textContent = option;
+                    
+                    optionElement.appendChild(optionLabel);
+                    optionElement.appendChild(optionText);
+                    
+                    optionElement.addEventListener('click', () => selectOption(option.charAt(0)));
+                    optionsContainer.appendChild(optionElement);
+                });
+            }
+            
+            // 更新答案显示区域
+            if (showAnswer) {
+                answerSection.classList.add('show');
+                
+                if (question.type === "multi") {
+                    correctAnswerElement.textContent = question.correctAnswer.join(", ");
+                } else {
+                    correctAnswerElement.textContent = question.correctAnswer;
+                }
+                
+                answerExplanationElement.textContent = question.explanation;
+            } else {
+                answerSection.classList.remove('show');
+            }
+            
+            // 更新题目导航中的当前题目
+            updateQuestionList();
+            
+            // 更新按钮状态
+            updateButtonStates();
+        }
+
+        // 选择选项
+        function selectOption(selectedOption) {
+            const question = questions[currentQuestionIndex];
+            
+            if (question.type === "single") {
+                // 单选题
+                userAnswers[currentQuestionIndex] = selectedOption;
+            } else if (question.type === "truefalse") {
+                // 判断题
+                userAnswers[currentQuestionIndex] = selectedOption === "√" ? "正确" : "错误";
+            } else if (question.type === "multi") {
+                // 多选题
+                if (!userAnswers[currentQuestionIndex]) {
+                    userAnswers[currentQuestionIndex] = [];
+                }
+                
+                const index = userAnswers[currentQuestionIndex].indexOf(selectedOption);
+                if (index === -1) {
+                    // 添加选项
+                    userAnswers[currentQuestionIndex].push(selectedOption);
+                } else {
+                    // 移除选项
+                    userAnswers[currentQuestionIndex].splice(index, 1);
+                }
+            }
+            
+            // 重新加载题目以更新选择状态
+            loadQuestion(currentQuestionIndex);
+            updateStats();
+        }
+
+        // 检查答案
+        function checkAnswer() {
+            const question = questions[currentQuestionIndex];
+            const userAnswer = userAnswers[currentQuestionIndex];
+            
+            if (!userAnswer || (question.type === "multi" && userAnswer.length === 0)) {
+                alert("请先选择答案！");
+                return;
+            }
+            
+            let isCorrect = false;
+            
+            if (question.type === "single" || question.type === "truefalse") {
+                isCorrect = userAnswer === question.correctAnswer;
+            } else if (question.type === "multi") {
+                // 多选题需要所有选项都正确且数量一致
+                if (Array.isArray(userAnswer) && userAnswer.length === question.correctAnswer.length) {
+                    isCorrect = userAnswer.every(answer => question.correctAnswer.includes(answer)) &&
+                               question.correctAnswer.every(answer => userAnswer.includes(answer));
+                }
+            }
+            
+            answerStatus[currentQuestionIndex] = isCorrect;
+            
+            // 显示答案
+            showAnswer = true;
+            loadQuestion(currentQuestionIndex);
+            
+            // 显示结果提示
+            if (isCorrect) {
+                alert("回答正确！");
+            } else {
+                alert("回答错误！请查看正确答案和解析。");
+            }
+            
+            updateStats();
+        }
+
+        // 切换显示答案
+        function toggleShowAnswer() {
+            showAnswer = !showAnswer;
+            loadQuestion(currentQuestionIndex);
+            
+            if (showAnswer) {
+                showAnswerBtn.textContent = "隐藏答案";
+            } else {
+                showAnswerBtn.textContent = "显示答案";
+            }
+        }
+
+        // 上一题
+        function goToPrevQuestion() {
+            if (currentQuestionIndex > 0) {
+                showAnswer = false;
+                loadQuestion(currentQuestionIndex - 1);
+                showAnswerBtn.textContent = "显示答案";
+            }
+        }
+
+        // 下一题
+        function goToNextQuestion() {
+            if (currentQuestionIndex < questions.length - 1) {
+                showAnswer = false;
+                loadQuestion(currentQuestionIndex + 1);
+                showAnswerBtn.textContent = "显示答案";
+            }
+        }
+
+        // 重置答案
+        function resetAnswers() {
+            if (confirm("确定要重置所有答题记录吗？这将清除所有已答题目和得分。")) {
+                userAnswers = new Array(questions.length).fill(null);
+                answerStatus = new Array(questions.length).fill(null);
+                showAnswer = false;
+                currentQuestionIndex = 0;
+                loadQuestion(currentQuestionIndex);
+                updateStats();
+                showAnswerBtn.textContent = "显示答案";
+                alert("答题记录已重置！");
+            }
+        }
+
+        // 更新统计数据
+        function updateStats() {
+            const answered = userAnswers.filter(answer => 
+                answer !== null && 
+                (typeof answer !== 'object' || answer.length > 0)
+            ).length;
+            
+            const correct = answerStatus.filter(status => status === true).length;
+            const score = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+            
+            answeredCountElement.textContent = answered;
+            correctCountElement.textContent = correct;
+            scoreElement.textContent = `${score}%`;
+            scoreDisplayElement.textContent = `得分: ${correct}/${answered}`;
+            
+            // 更新进度条
+            const progressPercentage = (answered / questions.length) * 100;
+            progressBarElement.style.width = `${progressPercentage}%`;
+        }
+
+        // 更新题目导航列表
+        function updateQuestionList() {
+            questionListElement.innerHTML = "";
+            
+            // 根据筛选条件显示题目
+            const filteredQuestions = questions.filter((question, index) => {
+                if (currentFilter === "all") return true;
+                if (currentFilter === "single" && question.type === "single") return true;
+                if (currentFilter === "truefalse" && question.type === "truefalse") return true;
+                if (currentFilter === "multi" && question.type === "multi") return true;
+                if (currentFilter === "unanswered" && userAnswers[index] === null) return true;
+                if (currentFilter === "incorrect" && answerStatus[index] === false) return true;
+                return false;
+            });
+            
+            // 如果筛选后没有题目，显示提示
+            if (filteredQuestions.length === 0) {
+                const emptyMessage = document.createElement('div');
+                emptyMessage.textContent = "暂无题目";
+                emptyMessage.style.gridColumn = "1 / -1";
+                emptyMessage.style.textAlign = "center";
+                emptyMessage.style.padding = "20px";
+                emptyMessage.style.color = "#999";
+                questionListElement.appendChild(emptyMessage);
+                return;
+            }
+            
+            // 创建题目导航项
+            filteredQuestions.forEach(question => {
+                const index = question.id - 1; // 题目ID从1开始，数组索引从0开始
+                const item = document.createElement('div');
+                item.className = 'question-item';
+                item.textContent = index + 1;
+                
+                // 标记当前题目
+                if (index === currentQuestionIndex) {
+                    item.classList.add('current');
+                }
+                
+                // 标记已回答题目
+                if (userAnswers[index] !== null && 
+                   (typeof userAnswers[index] !== 'object' || userAnswers[index].length > 0)) {
+                    item.classList.add('answered');
+                    
+                    // 标记答错题目
+                    if (answerStatus[index] === false) {
+                        item.classList.add('incorrect-answered');
+                    }
+                }
+                
+                item.addEventListener('click', () => {
+                    showAnswer = false;
+                    loadQuestion(index);
+                    showAnswerBtn.textContent = "显示答案";
+                });
+                
+                questionListElement.appendChild(item);
+            });
+        }
+
+        // 更新按钮状态
+        function updateButtonStates() {
+            prevBtn.disabled = currentQuestionIndex === 0;
+            nextBtn.disabled = currentQuestionIndex === questions.length - 1;
+        }
+
+        // 初始化应用
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
